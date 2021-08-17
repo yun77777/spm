@@ -15,7 +15,7 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 public class AWSs3 {
 
     //Amazon-s3-sdk 
-    private static final String BUCKET_NAME = "bucket_name";
+    private static final String BUCKET_NAME = "mybuckets3s3";
     private static final String ACCESS_KEY = "AKIAVJN3R355NRJ6KR3K";
     private static final String SECRET_KEY = "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";
     private AmazonS3 amazonS3;
