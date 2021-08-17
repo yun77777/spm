@@ -186,7 +186,7 @@ public class boardController {
 			if(paramMap.get("replyType")!=null && paramMap.get("replyType").toString().equals("Y"))
 				paramMap.put("title","[Re:] "+paramMap.get("title").toString());
 
-			
+			System.err.println("FILE_PATHFILE_PATHFILE_PATHFILE_PATHFILE_PATH:"+fileList);
 			model.addAttribute("detail",detail);
 			model.addAttribute("list",list);
 			model.addAttribute("replyList",replyList);

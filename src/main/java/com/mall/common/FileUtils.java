@@ -68,7 +68,10 @@ public class FileUtils {
 				listMap.put("ORG_FILE_NAME", originalFileName);
 				listMap.put("STORED_FILE_NAME", storedFileName);
 				listMap.put("FILE_SIZE", multipartFile.getSize());
-//				listMap.put("FILE_PATH", filePath + storedFileName);
+				
+				
+				listMap.put("FILE_PATH", S3Uploader.getFileURL("mybuckets3s3", originalFileName));
+				
 				listMap.put("NEW_ITEM", "Y");
 				list.add(listMap);
 			}
