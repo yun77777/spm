@@ -320,7 +320,7 @@
 			FILE_PATH,
 			B_TYPE
 		FROM MP_FILE
-		WHERE FILE_NO=#{FILE_NO} and #{B_TYPE}
+		WHERE FILE_NO=#{FILE_NO} and B_TYPE=#{B_TYPE} and BNO=#{B_NO}
 	</select>
 	
 	<delete id="deleteFile" parameterType="map">

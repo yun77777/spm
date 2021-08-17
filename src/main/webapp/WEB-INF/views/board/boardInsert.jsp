@@ -252,7 +252,7 @@ function fn_insert() {
 	formData.append("fileNameDel",fileNameDel);
 	//formData.append("no",$("#boardForm #no").val());
 	formData.append("file",file);
-	
+	alert('rmfqhsgh:'+no);
 	$.ajax({
 		url : "${pageContext.request.contextPath}/insertBoard.do",
 		type : "post",
