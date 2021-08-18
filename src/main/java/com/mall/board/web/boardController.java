@@ -29,7 +29,7 @@ import com.mall.mng.service.mngService;
 import com.mall.user.LoginDTO;
 
 
-@RequestMapping(value="/web")
+//@RequestMapping(value="/web")
 @Controller
 public class boardController {
 	
@@ -116,7 +116,7 @@ public class boardController {
 		}
 		
 		
-		return "/test";
+		return "test";
 	}
 	
 	
@@ -126,7 +126,7 @@ public class boardController {
 		model.addAttribute("login",httpSession.getAttribute("login"));
 		model.addAttribute("member",httpSession.getAttribute("member"));
 
-		return "/about";
+		return "about";
 	}
 	
 	@RequestMapping(value = "/boardList.do")

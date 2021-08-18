@@ -21,7 +21,7 @@
     function fn_sign_in() {
     	//var formData = $('#boardForm').serialize();
     	$('#loginForm').attr({
-    		action : '<c:url value="/web/user/loginPost.do"/>',
+    		action : '<c:url value="/user/loginPost.do"/>',
     		target : '_self'
     	}).submit();
     }
@@ -30,7 +30,7 @@
     	$('#itemType').val(itemType);
     	
     	$('#navForm').attr({
-    		action : '<c:url value="/web/itemList.do"/>',
+    		action : '<c:url value="/itemList.do"/>',
     		target : '_self'
     	}).submit();
     	
@@ -41,9 +41,9 @@
 			alert('로그인 후 이용해주세요');
 		else{
 			if(type=='cart')
-				window.location='<c:url value="/web/cartList.do"/>';
+				window.location='<c:url value="/cartList.do"/>';
 			else if(type=='order')
-				window.location='<c:url value="/web/orderList2.do"/>';
+				window.location='<c:url value="/orderList2.do"/>';
 		}
 			
 
@@ -66,7 +66,7 @@
      */	
     	
     	$.ajax({
-    		url : "${pageContext.request.contextPath}/web/itemDetailPopup.do",
+    		url : "${pageContext.request.contextPath}/itemDetailPopup.do",
     		type : "post",
     		data : { gdsNum : B_NO },
     		success : function(result) {
@@ -173,7 +173,7 @@
     						};
     				
     			$.ajax({
-    					url : "/web/directOrderProcess.do",
+    					url : "/directOrderProcess.do",
     					type : "post",
     					data : data,
     					success : function(result){
@@ -181,7 +181,7 @@
     						
     						$('#orderForm').attr({
     	/* 					$('#boardForm').attr({ */
-    							action : '<c:url value="/web/directOrderProcessDetail.do"/>',
+    							action : '<c:url value="/directOrderProcessDetail.do"/>',
     							target : '_self'
     						}).submit(); 
     					   	//location.replace("/directOrderProcessDetail.do");
@@ -249,7 +249,7 @@ function fn_order_detail_pop(orderId, pageType) {
 		pageType='';
 
 	$.ajax({
-		url : "${pageContext.request.contextPath}/web/orderDetailViewPopup.do",
+		url : "${pageContext.request.contextPath}/orderDetailViewPopup.do",
 		type : "post",
 		data : {
 			orderId : orderId,
@@ -324,7 +324,7 @@ function fn_customer_detail_pop(userId) {
 	$('#userId').val(userId);
 
 	$.ajax({
-		url : "${pageContext.request.contextPath}/web/mng/customerDetailopup.do",
+		url : "${pageContext.request.contextPath}/mng/customerDetailopup.do",
 		type : "post",
 		data : {
 			userId : userId
@@ -369,7 +369,7 @@ function fn_review_popup(orderId, pageType) {
 		pageType='';
 
 	$.ajax({
-		url : "${pageContext.request.contextPath}/web/reviewPopup.do",
+		url : "${pageContext.request.contextPath}/reviewPopup.do",
 		type : "post",
 		data : {
 			orderId : orderId,
@@ -453,7 +453,7 @@ function kakaoLogout() {
       })
       Kakao.Auth.setAccessToken(undefined)
     } else{
-    	//window.location.href= '<c:url value="/web/user/logout.do"/>';
+    	//window.location.href= '<c:url value="/user/logout.do"/>';
 
     	
     }

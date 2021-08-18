@@ -36,7 +36,7 @@ import com.mall.board.service.boardService;
 import com.mall.mng.service.mngService;
 
 @Controller
-@RequestMapping(value="/web")
+//@RequestMapping(value="/web")
 public class orderController {
 
 	private static final Logger logger = LoggerFactory.getLogger(orderController.class);
@@ -118,7 +118,7 @@ Map<String, Object> result = new HashMap<String, Object>();
 		System.err.println("@@@@테스트");
 		model.addAttribute("detail", detail);
 		model.addAttribute("imgList", imgList);
-        return "/common/popup/testPopup";
+        return "common/popup/testPopup";
 	}
 
 	

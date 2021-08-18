@@ -173,13 +173,13 @@ $(document).ready(function(){
     		alert(checkArr);
     			
     		$.ajax({
-    			url : "/web/mng/deleteCustomer.do",
+    			url : "/mng/deleteCustomer.do",
     			type : "post",
     			data : { chbox : checkArr },
     			success : function(result){
     				if(result == 1) {						
     					alert("삭제 완료");
-    					location.href = "/web/mng/customerList.do";
+    					location.href = "/mng/customerList.do";
     				} else {
     					alert("삭제 실패");
     				}
@@ -192,7 +192,7 @@ function fn_list(no) {
 	$('#currentPageNo').val(no);
 	
 	$('#boardForm').attr({
-		action : '<c:url value="/web/mng/customerList.do"/>',
+		action : '<c:url value="/mng/customerList.do"/>',
 		target : '_self'
 	}).submit();
 };
@@ -202,7 +202,7 @@ function fn_insert(id){
 		alert("로그인 후 게시물 작성이 가능합니다.");
 	else{
 		$('#boardForm').attr({
-			action : '<c:url value="/web/mng/boardInsert.do" />',
+			action : '<c:url value="/mng/boardInsert.do" />',
 			target : '_self'
 		}).submit();
 	}
@@ -217,7 +217,7 @@ function fn_detail(id){
 		alert("You need to log in first");
 	else{
 		$('#boardForm').attr({
-			action : '<c:url value="/web/mng/boardDetail.do" />',
+			action : '<c:url value="/mng/boardDetail.do" />',
 			target : '_self'
 		}).submit();
 	}

@@ -296,7 +296,7 @@ function fn_detail(B_NO,B_TYPE){
 	$('#B_TYPE').val(B_TYPE);
 	
 	$('#boardForm').attr({
-		action : '<c:url value="/web/orderDetail.do" />',
+		action : '<c:url value="/orderDetail.do" />',
 		target : '_self'
 	}).submit();
 }
@@ -306,7 +306,7 @@ function sampleModalPopup(){
 	
 
     $.ajax({
-		url : "${pageContext.request.contextPath}/web/itemDetailPopup.do",
+		url : "${pageContext.request.contextPath}/itemDetailPopup.do",
 		type : "post",
 		enctype: 'multipart/form-data',
 		data : { gdsNum : 1 },
@@ -336,7 +336,7 @@ function fn_detail_pop(B_NO,B_TYPE){
  */	
 	
 	$.ajax({
-		url : "${pageContext.request.contextPath}/web/itemDetailPopup.do",
+		url : "${pageContext.request.contextPath}/itemDetailPopup.do",
 		type : "post",
 		data : { gdsNum : B_NO },
 		success : function(result) {
@@ -445,7 +445,7 @@ function fn_detail_pop(B_NO,B_TYPE){
 						
 						$('#orderForm').attr({
 	/* 					$('#boardForm').attr({ */
-							action : '<c:url value="/web/directOrderProcessDetail.do"/>',
+							action : '<c:url value="/directOrderProcessDetail.do"/>',
 							target : '_self'
 						}).submit(); 
 					   	//location.replace("/directOrderProcessDetail.do");
@@ -476,7 +476,7 @@ function fn_list(no) {
 	$('#currentPageNo').val(no);
 	var currentPageNo=no;
 	$('#boardForm').attr({
-		action : '<c:url value="/web/test.do"/>',
+		action : '<c:url value="/test.do"/>',
 		target : '_self'
 	}).submit();
 	
@@ -486,7 +486,7 @@ function fn_itemList(itemType) {
 	$('#itemType').val(itemType);
 	
 	$('#navForm').attr({
-		action : '<c:url value="/web/itemList.do"/>',
+		action : '<c:url value="/itemList.do"/>',
 		target : '_self'
 	}).submit();
 	
@@ -512,7 +512,7 @@ $(".addCart_btn").click(function(){
 				};
 		
 		$.ajax({
-			url : "/web/view/addCart.do",
+			url : "/view/addCart.do",
 			type : "post",
 			data : data,
 			success : function(result){
@@ -523,12 +523,12 @@ $(".addCart_btn").click(function(){
 					
 					var goToCart=confirm(msg);
 	 				if(goToCart){
-						window.location='<c:url value="/web/cartList.do"/>';
+						window.location='<c:url value="/cartList.do"/>';
 					}
 	 
 				} else {
 					alert("회원만 사용할 수 있습니다.")
-					window.location='<c:url value="/web/user/login.do"/>';
+					window.location='<c:url value="/user/login.do"/>';
 
 				}
 			},

@@ -81,7 +81,7 @@ function fn_boardList(B_TYPE,no) {
 	$('#boardForm #currentPageNo').val(no);
 
 	$('#boardListForm').attr({
-		action : '<c:url value="/web/boardList.do"/>',
+		action : '<c:url value="/boardList.do"/>',
 		target : '_self'
 	}).submit();
 }
@@ -92,7 +92,7 @@ function fn_list(no) {
 	$('#boardForm #B_TYPE').val('${B_TYPE}');
 	
 	$('#boardForm').attr({
-		action : '<c:url value="/web/boardList.do"/>',
+		action : '<c:url value="/boardList.do"/>',
 		target : '_self'
 	}).submit();
 };
@@ -104,7 +104,7 @@ function fn_insert(id, B_TYPE){
 		alert('로그인 후 이용해주세요');
 	else{
 		$('#boardForm').attr({
-			action : '<c:url value="/web/boardInsert.do" />',
+			action : '<c:url value="/boardInsert.do" />',
 			target : '_self'
 		}).submit();
 	}
@@ -131,7 +131,7 @@ function fn_detail(no,id,B_TYPE,M_ID){
 		
 		$('#boardForm #no').val(no);
 		$('#boardForm').attr({
-			action : '<c:url value="/web/boardDetail.do" />',
+			action : '<c:url value="/boardDetail.do" />',
 			target : '_self'
 		}).submit();
 	}

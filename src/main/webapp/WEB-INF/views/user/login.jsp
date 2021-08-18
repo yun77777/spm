@@ -85,7 +85,7 @@
         <!-- /.social-auth-links -->
 
         <!-- <a href="#">비밀번호 찾기</a><br> -->
-        <a href="<c:url value='/web/signUp.do'/>" class="text-center">회원가입</a>
+        <a href="<c:url value='/signUp.do'/>" class="text-center">회원가입</a>
 	</form>
     </div>
     <!-- /.login-box-body -->
@@ -123,7 +123,7 @@
     function fn_sign_in() {
     	//var formData = $('#boardForm').serialize();
     	$('#loginForm').attr({
-    		action : '<c:url value="/web/user/loginPost.do"/>',
+    		action : '<c:url value="/user/loginPost.do"/>',
     		target : '_self'
     	}).submit();
     }
@@ -176,7 +176,7 @@ function kakaoLogout() {
       })
       Kakao.Auth.setAccessToken(undefined)
     } else{
-    	//window.location.href= '<c:url value="/web/user/logout.do"/>';
+    	//window.location.href= '<c:url value="/user/logout.do"/>';
 
     	
     }

@@ -20,7 +20,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.mall.board.service.ReplyService;
 import com.mall.common.PaginationVO;
 
-@RequestMapping(value="/web")
+//@RequestMapping(value="/web")
 @Controller
 public class ReplyController {
 	

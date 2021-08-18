@@ -53,7 +53,7 @@
 		</c:if>
 		<div class="align-self-center mt-2">
 				<%-- <a href="<c:url value='/signUp.do'/>" class="text-center">비밀번호 찾기</a> / --%>
-				<a href="<c:url value='/web/signUp.do'/>" class="text-center">회원가입</a>
+				<a href="<c:url value='/signUp.do'/>" class="text-center">회원가입</a>
 		</div>
 	
 			

@@ -25,7 +25,7 @@ import com.mall.login.service.loginService;
 
 
 @Controller
-@RequestMapping("/web/user")
+@RequestMapping("/user")
 public class UserRegisterController {
 
     @Resource(name = "UserService")
@@ -53,7 +53,7 @@ public class UserRegisterController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-        return "redirect:/web/user/login.do";
+        return "redirect:/user/login.do";
     }
     
 }

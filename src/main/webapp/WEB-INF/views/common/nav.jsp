@@ -20,7 +20,7 @@
  
 <nav class="navbar navbar-expand-lg navbar-dark bg-conflowerblue">
 <!--         <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> -->
-    <a class="navbar-brand ml-5" href="/web/test.do">
+    <a class="navbar-brand ml-5" href="/test.do">
         <img src="<c:url value='/se2/img/dog.png'/>" style="width:10%;height:auto;margin:0 10px">
 <!--         <img src="/se2/img/dog.png" style="width:10%;height:auto;margin:0 10px"> -->
         <br><i class="fas fa-gem me-3"></i>댕댕몰
@@ -52,7 +52,7 @@
 				<li class="nav-item ml-5"><a class="nav-link" href="#" onclick="fn_itemList('shoes')">신발</a></li>
 				<li class="nav-item ml-5"><a class="nav-link" href="#" onclick="fn_itemList('pet')">반려동물용품</a></li>
 				
-				<li class="nav-item ml-5"><a class="nav-link" href="/web/boardList.do">게시판</a></li>
+				<li class="nav-item ml-5"><a class="nav-link" href="/boardList.do">게시판</a></li>
                 <li class="nav-item ml-5"><a class="nav-link" href="#" onclick="fn_chk_login('${member.ID}','cart')">장바구니</a></li>
 <%--                 <li class="nav-item ml-5"><a class="nav-link" href="#" onclick="fn_chk_login('${member.ID}')"><img src="<c:url value='/resources/img/cart.png'/>" alt="..." style="width:35px; height:auto;"></a></li> --%>
                 <li class="nav-item ml-5"><a class="nav-link" onclick="fn_chk_login('${member.ID}','order')">주문 내역</a></li>
@@ -71,9 +71,9 @@
  -->               <li class="nav-item dropdown ml-3">
                    <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:blue">${member.ID}</a>
                    <div class="dropdown-menu dropdown:hover dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                       <a class="dropdown-item" href="/web/user/myPage.do">회원 정보 관리</a>
-                       <a class="dropdown-item" href="/web/cartList.do">장바구니</a>
-                       <a class="dropdown-item" href="/web/orderList2.do">주문 내역</a>
+                       <a class="dropdown-item" href="/user/myPage.do">회원 정보 관리</a>
+                       <a class="dropdown-item" href="/cartList.do">장바구니</a>
+                       <a class="dropdown-item" href="/orderList2.do">주문 내역</a>
                    </div>
                </li>
 			</c:if>
@@ -88,12 +88,12 @@
 <li class="nav-item dropdown ml-3">
                      <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:red">관리</a>
                    <div class="dropdown-menu dropdown:hover dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                       <a class="dropdown-item" href="/web/mng/itemList.do">상품 관리</a>
-                       <a class="dropdown-item" href="/web/mng/boardList.do">게시판 관리</a>
-                       <a class="dropdown-item" href="/web/mng/mngCommonCodes.do">공통코드 관리</a>
-                       <a class="dropdown-item" href="/web/mng/orderList.do">주문 내역 관리</a>
+                       <a class="dropdown-item" href="/mng/itemList.do">상품 관리</a>
+                       <a class="dropdown-item" href="/mng/boardList.do">게시판 관리</a>
+                       <a class="dropdown-item" href="/mng/mngCommonCodes.do">공통코드 관리</a>
+                       <a class="dropdown-item" href="/mng/orderList.do">주문 내역 관리</a>
                        <!-- <a class="dropdown-item" href="portfolio-3-col.html">상품평 관리</a> -->
-                       <a class="dropdown-item" href="/web/mng/customerList.do">고객 관리</a>
+                       <a class="dropdown-item" href="/mng/customerList.do">고객 관리</a>
                    </div>
                </li>
 </c:if>
@@ -102,7 +102,7 @@
 		        	<a href="#myModal" class="nav-link" data-toggle="modal">로그인</a>
 		        </c:if>
 		        <c:if test="${!empty member}">
-		        	<a onclick="fn_logout()" class="nav-link" href="/web/user/logout.do">로그아웃</a>
+		        	<a onclick="fn_logout()" class="nav-link" href="/user/logout.do">로그아웃</a>
 		        </c:if>
 				</li>
             </ul>

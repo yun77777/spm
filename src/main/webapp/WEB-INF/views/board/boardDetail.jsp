@@ -376,7 +376,7 @@ $("#commentCnt").html('('+replyListLen+')');
 
 function fn_list() {
 	$('#boardForm').attr({
-		action : '<c:url value="/web/boardList.do"/>',
+		action : '<c:url value="/boardList.do"/>',
 		target : '_self'
 	}).submit();
 }
@@ -393,7 +393,7 @@ function fn_detail(no,type){
 	}
 	
 	$('#boardForm').attr({
-		action : '<c:url value="/web/board'+type+'.do" />',
+		action : '<c:url value="/board'+type+'.do" />',
 		target : '_self'
 	}).submit();
 
@@ -404,7 +404,7 @@ function fn_delete() {
 	$('#boardForm #no').attr('disabled',false);
 	var formData = new FormData($("#boardForm")[0]);
 	$.ajax({
-		url : "${pageContext.request.contextPath}/web/deleteBoard.do",
+		url : "${pageContext.request.contextPath}/deleteBoard.do",
 		type : "post",
 		enctype: 'multipart/form-data',
 		data : formData,
@@ -441,7 +441,7 @@ function fn_reply(no){
 	//$('#boardForm #groupLayer').val(Number(no)+1);
 
 	$('#boardForm').attr({
-		action : '<c:url value="/web/boardDetail.do" />',
+		action : '<c:url value="/boardDetail.do" />',
 		target : '_self'
 	}).submit();
 
@@ -459,7 +459,7 @@ $("#delete_btn").click(function(){
 	if(confirm_val) {
 													
 		$.ajax({
-			url : "${pageContext.request.contextPath}/web/reply/delete.do",
+			url : "${pageContext.request.contextPath}/reply/delete.do",
 			type : "post",
 			enctype: 'multipart/form-data',
 			data : formData,
@@ -487,7 +487,7 @@ $("#comment_btn").click(function() {
 	var writer=$("#writer").val();
 	var content=$("#content").val(); */
 	$.ajax({
-		url : "${pageContext.request.contextPath}/web/reply/write.do",
+		url : "${pageContext.request.contextPath}/reply/write.do",
 		type : "post",
 		//data : {bno:bno, writer:writer, content:content},
 		enctype: 'multipart/form-data',

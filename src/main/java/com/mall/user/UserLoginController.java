@@ -30,7 +30,7 @@ import com.mall.login.web.NaverLoginBO;
 
 
 @Controller
-@RequestMapping("/web/user")
+@RequestMapping("/user")
 public class UserLoginController {
 	@Resource(name = "UserService")
 	private UserService userService;
@@ -200,7 +200,7 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 		session.invalidate();
 		//카카오 로그아웃
 
-		return "redirect:/web/test.do";
+		return "redirect:/test.do";
 	}
 
 	// 로그인 처리
@@ -245,6 +245,7 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 			e.printStackTrace();
 		}
 		
+//		return "/test";
 		return "/user/loginPost";
 	}
 

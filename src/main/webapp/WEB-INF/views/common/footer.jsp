@@ -83,6 +83,7 @@
           <h6 class="text-uppercase fw-bold mb-4">
             연락처
           </h6>
+          <p><i class="fas  fa-user-circle me-3"></i> 원윤경</p>
           <p><i class="fas fa-home me-3"></i> 서울시</p>
           <p>
             <i class="fas fa-envelope me-3"></i>

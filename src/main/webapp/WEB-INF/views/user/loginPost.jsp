@@ -12,7 +12,7 @@
     }else{
     	alert("로그인되었습니다.");
     }
-    self.location = '<c:url value="/web/test.do"/>';
+	window.location='<c:url value="/test.do"/>';
 
     </script>
 </body>

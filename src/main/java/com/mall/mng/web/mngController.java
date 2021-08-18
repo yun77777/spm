@@ -31,7 +31,7 @@ import com.mall.vo.GoodsVO;
 import net.sf.json.JSONObject;
 
 @Controller
-@RequestMapping("/web/mng")
+@RequestMapping("/mng")
 public class mngController {
 
 	private static final Logger logger = LoggerFactory.getLogger(mngController.class);
