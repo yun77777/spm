@@ -212,7 +212,7 @@ body {
 								<td>
 									<c:forEach var="file" items="${fileList}" varStatus="var">
 									<div>
-										<img class="card-img-top" style="width:20%;height:auto" name="itemImg${var.index}" id="itemImg${var.index}" src="${file.FILE_PATH}" alt="no image" />
+										<img class="card-img-top" style="width:20%;height:auto" name="itemImg${var.index}" id="itemImg${var.index}" src="https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/${file.ORG_FILE_NAME}" alt="no image" />
 <%-- 										<img class="card-img-top" style="width:20%;height:auto" name="itemImg${var.index}" id="itemImg${var.index}" src="<c:url value='/img/${file.ORG_FILE_NAME}'/>" alt="no image" /> --%>
 										<input type="hidden" class="FILE_NO" id="FILE_NO" name="FILE_NO_${var.index}" value="${file.FILE_NO}">
 										<input type="hidden" id="FILE_NAME" name="FILE_NAME" value="FILE_NO_${var.index}">
@@ -376,7 +376,7 @@ $("#commentCnt").html('('+replyListLen+')');
 
 function fn_list() {
 	$('#boardForm').attr({
-		action : '<c:url value="/boardList.do"/>',
+		action : '<c:url value="/web/boardList.do"/>',
 		target : '_self'
 	}).submit();
 }
@@ -393,7 +393,7 @@ function fn_detail(no,type){
 	}
 	
 	$('#boardForm').attr({
-		action : '<c:url value="/board'+type+'.do" />',
+		action : '<c:url value="/web/board'+type+'.do" />',
 		target : '_self'
 	}).submit();
 
@@ -404,7 +404,7 @@ function fn_delete() {
 	$('#boardForm #no').attr('disabled',false);
 	var formData = new FormData($("#boardForm")[0]);
 	$.ajax({
-		url : "${pageContext.request.contextPath}/deleteBoard.do",
+		url : "${pageContext.request.contextPath}/web/deleteBoard.do",
 		type : "post",
 		enctype: 'multipart/form-data',
 		data : formData,
@@ -441,7 +441,7 @@ function fn_reply(no){
 	//$('#boardForm #groupLayer').val(Number(no)+1);
 
 	$('#boardForm').attr({
-		action : '<c:url value="/boardDetail.do" />',
+		action : '<c:url value="/web/boardDetail.do" />',
 		target : '_self'
 	}).submit();
 
@@ -459,7 +459,7 @@ $("#delete_btn").click(function(){
 	if(confirm_val) {
 													
 		$.ajax({
-			url : "${pageContext.request.contextPath}/reply/delete.do",
+			url : "${pageContext.request.contextPath}/web/reply/delete.do",
 			type : "post",
 			enctype: 'multipart/form-data',
 			data : formData,
@@ -487,7 +487,7 @@ $("#comment_btn").click(function() {
 	var writer=$("#writer").val();
 	var content=$("#content").val(); */
 	$.ajax({
-		url : "${pageContext.request.contextPath}/reply/write.do",
+		url : "${pageContext.request.contextPath}/web/reply/write.do",
 		type : "post",
 		//data : {bno:bno, writer:writer, content:content},
 		enctype: 'multipart/form-data',

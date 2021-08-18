@@ -21,7 +21,7 @@
     function fn_sign_in() {
     	//var formData = $('#boardForm').serialize();
     	$('#loginForm').attr({
-    		action : '<c:url value="/user/loginPost.do"/>',
+    		action : '<c:url value="/web/user/loginPost.do"/>',
     		target : '_self'
     	}).submit();
     }
@@ -30,17 +30,22 @@
     	$('#itemType').val(itemType);
     	
     	$('#navForm').attr({
-    		action : '<c:url value="/itemList.do"/>',
+    		action : '<c:url value="/web/itemList.do"/>',
     		target : '_self'
     	}).submit();
     	
     }
     
-    function fn_chk_login(id) {
+    function fn_chk_login(id,type) {
 		if(id.length==0)
 			alert('로그인 후 이용해주세요');
-		else
-			window.location='<c:url value="/cartList.do"/>';
+		else{
+			if(type=='cart')
+				window.location='<c:url value="/web/cartList.do"/>';
+			else if(type=='order')
+				window.location='<c:url value="/web/orderList2.do"/>';
+		}
+			
 
     }
     
@@ -61,7 +66,7 @@
      */	
     	
     	$.ajax({
-    		url : "${pageContext.request.contextPath}/itemDetailPopup.do",
+    		url : "${pageContext.request.contextPath}/web/itemDetailPopup.do",
     		type : "post",
     		data : { gdsNum : B_NO },
     		success : function(result) {
@@ -89,7 +94,8 @@
     			  
     			var img=imgList[i].file;
     			var file = $("#file").val(img);
-    			var image="<c:url value='/img/"+img+"'/>"; //상품 상세 이미지
+    			var image="https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/"+img; //상품 상세 이미지
+/*     			var image="<c:url value='/img/"+img+"'/>"; //상품 상세 이미지 */
     			  $("#pp").append("<img class='card-img-top' src="+image+"><br><br>");
     /* 			  $("#pp").append(i+"<img class='card-img-top scale' src="+image+"><br>"); */
     			 
@@ -116,7 +122,8 @@
     		
     		//$("#gdsDes").val("새로운 값을 지정합니다.");  //텍스트 에어리어에 새로 값을 지정.
     		
-    		$("#rpsnImg").attr("src","<c:url value='/img/"+img+"'/>");
+    		$("#rpsnImg").attr("src","https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/"+img);
+    		
     		console.log('================================');
     		
     		$("#reviewDiv").html('zxczx');
@@ -166,7 +173,7 @@
     						};
     				
     			$.ajax({
-    					url : "/directOrderProcess.do",
+    					url : "/web/directOrderProcess.do",
     					type : "post",
     					data : data,
     					success : function(result){
@@ -174,7 +181,7 @@
     						
     						$('#orderForm').attr({
     	/* 					$('#boardForm').attr({ */
-    							action : '<c:url value="/directOrderProcessDetail.do"/>',
+    							action : '<c:url value="/web/directOrderProcessDetail.do"/>',
     							target : '_self'
     						}).submit(); 
     					   	//location.replace("/directOrderProcessDetail.do");
@@ -242,7 +249,7 @@ function fn_order_detail_pop(orderId, pageType) {
 		pageType='';
 
 	$.ajax({
-		url : "${pageContext.request.contextPath}/orderDetailViewPopup.do",
+		url : "${pageContext.request.contextPath}/web/orderDetailViewPopup.do",
 		type : "post",
 		data : {
 			orderId : orderId,
@@ -258,7 +265,8 @@ function fn_order_detail_pop(orderId, pageType) {
 			for (var i = 0; i < detailList.length; i++) {
 				console.log('element', i, detailList[i]);
 				console.log(detailList[i].gdsName);
-				var image = "<c:url value='/img/"+detailList[i].representative_file+"'/>";
+				var image="https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/"+detailList[i].representative_file;
+/* 				var image = "<c:url value='/img/"+detailList[i].representative_file+"'/>"; */
 				// #pp: 상세이미지 imgList div 영역
 						
 				content+='<colgroup><col width="*"><col width="20%"><col width="*"></colgroup>';
@@ -316,7 +324,7 @@ function fn_customer_detail_pop(userId) {
 	$('#userId').val(userId);
 
 	$.ajax({
-		url : "${pageContext.request.contextPath}/mng/customerDetailopup.do",
+		url : "${pageContext.request.contextPath}/web/mng/customerDetailopup.do",
 		type : "post",
 		data : {
 			userId : userId
@@ -361,7 +369,7 @@ function fn_review_popup(orderId, pageType) {
 		pageType='';
 
 	$.ajax({
-		url : "${pageContext.request.contextPath}/reviewPopup.do",
+		url : "${pageContext.request.contextPath}/web/reviewPopup.do",
 		type : "post",
 		data : {
 			orderId : orderId,
@@ -377,7 +385,8 @@ function fn_review_popup(orderId, pageType) {
 			for (var i = 0; i < detailList.length; i++) {
 				console.log('element', i, detailList[i]);
 				console.log(detailList[i].gdsName);
-				var image = "<c:url value='/img/"+detailList[i].representative_file+"'/>";
+				var image="https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/"+detailList[i].representative_file;
+/* 				var image = "<c:url value='/img/"+detailList[i].representative_file+"'/>"; */
 				// #pp: 상세이미지 imgList div 영역
 						
 				content+='<colgroup><col width="*"><col width="20%"><col width="*"></colgroup>';
@@ -444,7 +453,7 @@ function kakaoLogout() {
       })
       Kakao.Auth.setAccessToken(undefined)
     } else{
-    	//window.location.href= '<c:url value="/user/logout.do"/>';
+    	//window.location.href= '<c:url value="/web/user/logout.do"/>';
 
     	
     }

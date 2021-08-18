@@ -88,8 +88,7 @@
             <i class="fas fa-envelope me-3"></i>
             wyk0935@gmail.com
           </p>
-          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          <p><i class="fas fa-phone me-3"></i> + 010 9253 0935</p>
         </div>
         <!-- Grid column -->
         <!-- Grid column -->

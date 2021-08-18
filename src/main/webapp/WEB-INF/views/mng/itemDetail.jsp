@@ -133,7 +133,8 @@
 								<div>
 									<img class="card-img-top" style="width: 200px; height: auto"
 										name="itemImg${var.index}" id="itemImg${var.index}"
-										src="<c:url value='/img/${file.file}'/>" alt="no image" /> <input
+										src="https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/${file.file}"
+										alt="no image" /> <input
 										type="hidden" class="FILE_NO" id="FILE_NO"
 										name="FILE_NO_${var.index}" value="${file.file_no}"> <input
 										type="hidden" id="FILE_NAME" name="FILE_NAME"

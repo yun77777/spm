@@ -20,7 +20,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.mall.login.service.loginService;
 
 
-
+@RequestMapping(value="/web")
 @Controller
 public class loginController {
 
@@ -84,7 +84,6 @@ public class loginController {
 			if(paramMap.get("userInfo")!=null) {
 				paramMap.put("ID",paramMap.get("id"));
 				paramMap.put("PLATFORM_TYPE","k");
-//{"id":1749525693,"connected_at":"2021-05-30T07:00:45Z","properties":{"nickname":"윤경"},"kakao_account":{"profile_needs_agreement":false,"profile":{"nickname":"윤경","is_default_image":true},"has_email":true,"email_needs_agreement":true,"has_gender":true,"gender_needs_agreement":true}}
 			}
 			System.err.println("afamflfml:"+paramMap);
 			//아이디 중복 아닐 경우

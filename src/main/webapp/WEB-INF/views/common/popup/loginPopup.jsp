@@ -31,10 +31,10 @@
 					</div>
 				</div>
 		</form>
-	<div class="modal-footer align-self-center bg-whitesmoke">
+	<div class="align-self-center mt-2">
 		<button type="submit" class="btn btn-primary pull-right" onclick="fn_sign_in()">로그인</button>
 		<label class="checkbox-inline pull-left"><input type="checkbox" name="useCookie" value="Y">로그인 유지</label>
-				
+	</div>
 		<c:if test="${id eq null}">
 		<div class="align-self-center mt-2">
 			<span class="pull-right">
@@ -51,11 +51,11 @@
 			      </a> -->
 	      </div>
 		</c:if>
-		<div class="align-self-center mt-2" style="width:100%; word-break:break-all;word-wrap:break-word;">
-				<a href="<c:url value='/signUp.do'/>" class="text-center">비밀번호 찾기</a> /
-				<a href="<c:url value='/signUp.do'/>" class="text-center">회원가입</a>
+		<div class="align-self-center mt-2">
+				<%-- <a href="<c:url value='/signUp.do'/>" class="text-center">비밀번호 찾기</a> / --%>
+				<a href="<c:url value='/web/signUp.do'/>" class="text-center">회원가입</a>
 		</div>
-	</div>
+	
 			
 		</div>
 	</div>

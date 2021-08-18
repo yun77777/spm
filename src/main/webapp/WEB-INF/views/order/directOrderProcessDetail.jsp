@@ -58,7 +58,7 @@
 								<td></td><td><a href="#!"
 									onclick="fn_detail_pop('${paramMap.gdsNum}',1)"
 									data-toggle="modal" data-target="#exampleModalLong">
-	                           		<img class="card-img-top" src="<c:url value='/img/${paramMap.file}'/>" style="width:100px" alt="no image" /><br />
+	                           		<img class="card-img-top" src="https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/${paramMap.file}" style="width:100px" alt="no image" /><br />
 								</a>
 								</td>
 							</tr>

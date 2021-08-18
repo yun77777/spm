@@ -51,7 +51,7 @@
 	                  
 		                
                 <div class="row">
-                    <div class="col-md-8"><img class="card-img-top" src="<c:url value='/img/${detail.representative_file}'/>" alt="no image" /></div>
+                    <div class="col-md-8"><img class="card-img-top" src="https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/${detail.representative_file}" alt="no image" /></div>
                     <div class="col-md-4">
                         <h3 class="my-3">${detail.title}</h3>
                        

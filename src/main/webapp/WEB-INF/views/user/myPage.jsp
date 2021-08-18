@@ -148,7 +148,7 @@ $(document).ready(function(){
 
 function fn_list(no) {
 	//$('#currentPageNo').val(no);
-	window.location='<c:url value="/signIn.do"/>';
+	window.location='<c:url value="/web/signIn.do"/>';
 	
 	/* $('#boardForm').attr({
 		action : '<c:url value="/boardList.do"/>',
@@ -170,7 +170,7 @@ function fn_update() {
 	var formData = new FormData($("#boardForm")[0]);
 
 $.ajax({
-	url : "${pageContext.request.contextPath}/user/updateUser.do",
+	url : "${pageContext.request.contextPath}/web/user/updateUser.do",
 	type : "post",
 	enctype: 'multipart/form-data',
 	data : formData,
@@ -188,7 +188,7 @@ $.ajax({
 
 
 	/* $('#boardForm').attr({
-		action : '<c:url value="/user/updateUser.do"/>',
+		action : '<c:url value="/web/user/updateUser.do"/>',
 		target : '_self'
 	}).submit(); */
 }

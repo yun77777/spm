@@ -36,6 +36,7 @@ import com.mall.board.service.boardService;
 import com.mall.mng.service.mngService;
 
 @Controller
+@RequestMapping(value="/web")
 public class orderController {
 
 	private static final Logger logger = LoggerFactory.getLogger(orderController.class);

@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- Page header-->
         <header>
             <div class="carousel slide" id="carouselExampleIndicators" data-ride="carousel">
@@ -11,8 +12,8 @@
                         <img class="list_main_img d-block w-100" src="<c:url value='/resources/assets/img/pet_yellow_champion_hood.jpg'/>" alt="..." />
 <%--                         <img class="list_main_img d-block w-100" src="<c:url value='/resources/assets/img/1.jpg'/>" alt="..." /> --%>
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>First Slide</h3>
-                            <p>This is a description for the first slide.</p>
+                            <h3>댕댕몰</h3>
+                            <p>댕댕이의, 댕댕이에 의한, 댕댕이를 위한</p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -20,8 +21,8 @@
 <%--                         <img class="d-block w-100" src="<c:url value='/resources/assets/img/pet_white_n_yellow_hood.jpg'/>" alt="..." /> --%>
 <%--                         <img class="d-block w-100" src="<c:url value='/resources/assets/img/2.jpg'/>" alt="..." /> --%>
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>Second Slide</h3>
-                            <p>This is a description for the second slide.</p>
+                            <h3>댕댕몰</h3>
+                            <p>내 댕댕이를 위한 모든 것</p>
                         </div>
                     </div>
                     	<script src=""></script>
@@ -30,8 +31,8 @@
                         <img class="list_main_img d-block w-100" src="<c:url value='/resources/assets/img/pet_green_hood.jpg'/>" alt="..." />
 <%--                         <img class="d-block w-100" src="<c:url value='/resources/assets/img/3.jpg'/>" alt="..." /> --%>
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>Third Slide</h3>
-                            <p>This is a description for the third slide.</p>
+                            <h3>댕댕몰</h3>
+                            <p>의류, 신발, 가방, 모든것을 한 공간에서 <!-- 내댕댕이를 패셔니스타로 --></p>
                         </div>
                     </div>
                 </div>

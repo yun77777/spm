@@ -30,7 +30,7 @@ import com.mall.login.web.NaverLoginBO;
 
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/web/user")
 public class UserLoginController {
 	@Resource(name = "UserService")
 	private UserService userService;
@@ -56,7 +56,7 @@ public class UserLoginController {
 	// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 	// 로그인 페이지
-	@RequestMapping(value="/login")
+	@RequestMapping(value="/login.do")
 	public String login( @RequestParam Map<String, Object> paramMap, HttpServletRequest request, HttpServletResponse response, Model model, HttpSession session) {
 		String kakaoUrl = kakaoLogin.getAuthorizationUrl(session);
 		model.addAttribute("kakao_url", kakaoUrl);
@@ -200,12 +200,12 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 		session.invalidate();
 		//카카오 로그아웃
 
-		return "redirect:/test.do";
+		return "redirect:/web/test.do";
 	}
 
 	// 로그인 처리
 	@RequestMapping(value = "/loginPost.do", method = RequestMethod.POST)
-	public void loginPOST(Map<String, Object> paramMap, LoginDTO loginDTO, HttpSession httpSession, Model model)
+	public String loginPOST(Map<String, Object> paramMap, LoginDTO loginDTO, HttpSession httpSession, Model model)
 			throws Exception {
 
 		paramMap.put("ID", loginDTO.getID());
@@ -217,33 +217,35 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 //            	if (userVO == null || !BCrypt.checkpw(loginDTO.getPW(), userVO.get("PW").toString())) {
 
 				Map<String, Object> userVO = userService.login(loginDTO);
+				if(userVO!=null) {
+					model.addAttribute("user", userVO);
+					model.addAttribute("id", userVO.get("ID"));
 
-				model.addAttribute("user", userVO);
-				model.addAttribute("id", userVO.get("ID"));
+					// 로그인 유지를 선택할 경우
+					if (loginDTO.isUseCookie()) {
+						int amount = 60 * 60 * 24 * 7; // 7일
+						Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount)); // 로그인 유지기간 설정
+						System.err.println("keepLogin");
+						System.err.println(userVO.get("ID"));
+						System.err.println(httpSession.getId());
+						System.err.println(sessionLimit);
 
-				// 로그인 유지를 선택할 경우
-				if (loginDTO.isUseCookie()) {
-					int amount = 60 * 60 * 24 * 7; // 7일
-					Date sessionLimit = new Date(System.currentTimeMillis() + (1000 * amount)); // 로그인 유지기간 설정
-					System.err.println("keepLogin");
-					System.err.println(userVO.get("ID"));
-					System.err.println(httpSession.getId());
-					System.err.println(sessionLimit);
+						paramMap.put("userId", userVO.get("ID"));
+						paramMap.put("sessionId", httpSession.getId());
+						paramMap.put("sessionLimit", sessionLimit);
 
-					paramMap.put("userId", userVO.get("ID"));
-					paramMap.put("sessionId", httpSession.getId());
-					paramMap.put("sessionLimit", sessionLimit);
-
-					userService.keepLogin(paramMap);
-//			        userService.keepLogin(paramMap, userVO.get("ID").toString(), httpSession.getId(), sessionLimit);
+						userService.keepLogin(paramMap);
+//				        userService.keepLogin(paramMap, userVO.get("ID").toString(), httpSession.getId(), sessionLimit);
+					}
 				}
-
+				
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+		
+		return "/user/loginPost";
 	}
 
 	// 로그인 페이지

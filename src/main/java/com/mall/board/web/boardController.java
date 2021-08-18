@@ -29,7 +29,7 @@ import com.mall.mng.service.mngService;
 import com.mall.user.LoginDTO;
 
 
-
+@RequestMapping(value="/web")
 @Controller
 public class boardController {
 	

@@ -65,14 +65,13 @@
 								<tr>
 									<td rowspan="4">
 										<div class="text-center">
-										<a href="#!"
-											onclick="fn_detail_pop('${orderList.gdsNum}')"
-											data-toggle="modal" data-target="#exampleModalLong"> 
 											<!-- <img class="card-img-top rounded" -->
 											<img class="card-img-top"
-												src="<c:url value='/img/${orderList.representative_file}'/>"
+												src="https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/${orderList.representative_file}"
+												<%-- src="<c:url value='/img/${orderList.representative_file}'/>" --%>
 												style="height: 200px;width:auto" alt="no image" />
-										</a></div>
+										
+										</div>
 									</td>
 									<td>주문번호</td>
 									<td>${orderList.orderId}</td>

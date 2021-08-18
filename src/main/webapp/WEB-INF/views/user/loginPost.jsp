@@ -9,12 +9,11 @@
     var length=id.length;
     if(id==null||length==0){
     	alert("아이디와 비밀번호를 확인해주세요.");
-        self.location = "/user/login.do";
     }else{
     	alert("로그인되었습니다.");
-        self.location = "/test.do";
     }
-        
+    self.location = '<c:url value="/web/test.do"/>';
+
     </script>
 </body>
 </html>

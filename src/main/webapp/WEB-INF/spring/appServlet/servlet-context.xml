@@ -41,9 +41,10 @@
 
 	<interceptors>
 		<interceptor>
-			<mapping path="/user/loginPost.do" />
-			<mapping path="/user/kakaoOauth.do" />
-			<mapping path="/user/naverOauth.do" />
+			<mapping path="/web/user/loginPost.do" />
+			<mapping path="/web/user/kakaoOauth.do" />
+			<mapping path="/web/user/naverOauth.do" />
+			<!-- <mapping path="/web/**" /> -->
 <!-- 			<mapping path="/*/*.do" /> -->
 <!-- 			        <mvc:mapping path="/user/loginPost"/>
  -->			
@@ -54,7 +55,7 @@
 	
 	<interceptors>
 		<interceptor>
-			<mapping path="/user/myPage.do" />
+			<mapping path="/web/user/myPage.do" />
 				<!-- <mvc:mapping path="/article/paging/search/write"/>
 		        <mvc:mapping path="/article/paging/search/modify"/>
 		        <mvc:mapping path="/article/paging/search/remove"/>

@@ -17,7 +17,7 @@
 <c:if test="${!empty list4}">
 <div class="peliculas-recomendadas contenedor">
       <div class="contenedor-titulo-controles">
-        <h3>상의</h3>
+        <h3>반려동물용품</h3>
         <!-- <small><a href="#">더보기</a></small> -->
         <div class="indicadores">
 
@@ -36,7 +36,8 @@
 	            </div> --%>
 	  <figure class="thumbnail round firstRow snip1384">
 	<!--   <figure class="thumbnail round pelicula snip1384"> -->
-			 <img class="lazy list_img" data-original="<c:url value='/img/${result.representative_file}'/>" alt="no image" />
+			 <img class="lazy list_img" data-original="https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/${result.representative_file}" alt="no image" />
+<%-- 			 <img class="lazy list_img" data-original="<c:url value='/img/${result.representative_file}'/>" alt="no image" /> --%>
 			 <figcaption>
 			   <h3>${result.gdsName}</h3>
 	<%-- <span>개당 가격</span><fmt:formatNumber pattern="###,###,###" value="${result.gdsPrice}" /> 원<br />
@@ -64,7 +65,7 @@
 <div class="peliculas-recomendadas contenedor">
 <c:if test="${empty list4}">
 	<div class="contenedor-titulo-controles">
-        <h3>하의</h3>
+        <h3>신발</h3>
         <div class="indicadores">
 
         </div>
@@ -99,7 +100,7 @@
 	            </div> --%>
 	  <figure class="thumbnail secondRow snip1384">
 	<!--   <figure class="thumbnail pelicula snip1384"> -->
-			 <img class="lazy list_img" data-original="<c:url value='/img/${result.representative_file}'/>" alt="no image" />
+			 <img class="lazy list_img" data-original="https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/${result.representative_file}" alt="no image" />
 			 <figcaption>
 			   <h3>${result.gdsName}</h3>
 	<%-- <span>개당 가격</span><fmt:formatNumber pattern="###,###,###" value="${result.gdsPrice}" /> 원<br />
@@ -122,7 +123,7 @@
 <div class="peliculas-recomendadas contenedor">
 <c:if test="${!empty list1}">
 	<div class="contenedor-titulo-controles">
-        <h3>신발</h3>
+        <h3>상의</h3>
         <div class="indicadores">
 
         </div>
@@ -150,7 +151,7 @@
 	            </div> --%>
 	  <figure class="thumbnail secondRow snip1384">
 	<!--   <figure class="thumbnail pelicula snip1384"> -->
-			 <img class="lazy list_img" data-original="<c:url value='/img/${result.representative_file}'/>" alt="no image" />
+			 <img class="lazy list_img" data-original="https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/${result.representative_file}" alt="no image" />
 			 <figcaption>
 			   <h3>${result.gdsName}</h3>
 	<%-- <span>개당 가격</span><fmt:formatNumber pattern="###,###,###" value="${result.gdsPrice}" /> 원<br />
@@ -173,7 +174,7 @@
 <div class="peliculas-recomendadas contenedor">
 <c:if test="${!empty list2}">
 	<div class="contenedor-titulo-controles">
-        <h3>반려동물용품</h3>
+        <h3>하의</h3>
         <div class="indicadores">
 
         </div>
@@ -201,7 +202,7 @@
 	            </div> --%>
 	  <figure class="thumbnail secondRow snip1384">
 	<!--   <figure class="thumbnail pelicula snip1384"> -->
-			 <img class="lazy list_img" data-original="<c:url value='/img/${result.representative_file}'/>" alt="no image" />
+			 <img class="lazy list_img" data-original="https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/${result.representative_file}" alt="no image" />
 			 <figcaption>
 			   <h3>${result.gdsName}</h3>
 	<%-- <span>개당 가격</span><fmt:formatNumber pattern="###,###,###" value="${result.gdsPrice}" /> 원<br />

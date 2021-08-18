@@ -296,7 +296,7 @@ function fn_detail(B_NO,B_TYPE){
 	$('#B_TYPE').val(B_TYPE);
 	
 	$('#boardForm').attr({
-		action : '<c:url value="/orderDetail.do" />',
+		action : '<c:url value="/web/orderDetail.do" />',
 		target : '_self'
 	}).submit();
 }
@@ -306,7 +306,7 @@ function sampleModalPopup(){
 	
 
     $.ajax({
-		url : "${pageContext.request.contextPath}/itemDetailPopup.do",
+		url : "${pageContext.request.contextPath}/web/itemDetailPopup.do",
 		type : "post",
 		enctype: 'multipart/form-data',
 		data : { gdsNum : 1 },
@@ -336,7 +336,7 @@ function fn_detail_pop(B_NO,B_TYPE){
  */	
 	
 	$.ajax({
-		url : "${pageContext.request.contextPath}/itemDetailPopup.do",
+		url : "${pageContext.request.contextPath}/web/itemDetailPopup.do",
 		type : "post",
 		data : { gdsNum : B_NO },
 		success : function(result) {
@@ -364,7 +364,8 @@ function fn_detail_pop(B_NO,B_TYPE){
 			  
 			var img=imgList[i].file;
 			var file = $("#file").val(img);
-			var image="<c:url value='/img/"+img+"'/>"; //상품 상세 이미지
+			var image="https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/"+img; //상품 상세 이미지
+			
 			  $("#pp").append("<img class='card-img-top' src="+image+"><br><br>");
 /* 			  $("#pp").append(i+"<img class='card-img-top scale' src="+image+"><br>"); */
 			 
@@ -390,7 +391,8 @@ function fn_detail_pop(B_NO,B_TYPE){
 		
 		//$("#gdsDes").val("새로운 값을 지정합니다.");  //텍스트 에어리어에 새로 값을 지정.
 		
-		$("#rpsnImg").attr("src","<c:url value='/img/"+img+"'/>");
+
+		$("#rpsnImg").attr("src","https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/"+img);
 		console.log('================================');
 		
 		//제품상세(기존)
@@ -443,7 +445,7 @@ function fn_detail_pop(B_NO,B_TYPE){
 						
 						$('#orderForm').attr({
 	/* 					$('#boardForm').attr({ */
-							action : '<c:url value="/directOrderProcessDetail.do"/>',
+							action : '<c:url value="/web/directOrderProcessDetail.do"/>',
 							target : '_self'
 						}).submit(); 
 					   	//location.replace("/directOrderProcessDetail.do");
@@ -474,7 +476,7 @@ function fn_list(no) {
 	$('#currentPageNo').val(no);
 	var currentPageNo=no;
 	$('#boardForm').attr({
-		action : '<c:url value="/test.do"/>',
+		action : '<c:url value="/web/test.do"/>',
 		target : '_self'
 	}).submit();
 	
@@ -484,7 +486,7 @@ function fn_itemList(itemType) {
 	$('#itemType').val(itemType);
 	
 	$('#navForm').attr({
-		action : '<c:url value="/itemList.do"/>',
+		action : '<c:url value="/web/itemList.do"/>',
 		target : '_self'
 	}).submit();
 	
@@ -510,7 +512,7 @@ $(".addCart_btn").click(function(){
 				};
 		
 		$.ajax({
-			url : "/view/addCart.do",
+			url : "/web/view/addCart.do",
 			type : "post",
 			data : data,
 			success : function(result){
@@ -521,12 +523,12 @@ $(".addCart_btn").click(function(){
 					
 					var goToCart=confirm(msg);
 	 				if(goToCart){
-						window.location='<c:url value="/cartList.do"/>';
+						window.location='<c:url value="/web/cartList.do"/>';
 					}
 	 
 				} else {
 					alert("회원만 사용할 수 있습니다.")
-					window.location='<c:url value="/user/login.do"/>';
+					window.location='<c:url value="/web/user/login.do"/>';
 
 				}
 			},

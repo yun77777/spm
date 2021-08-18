@@ -90,7 +90,7 @@ d
 <script>
 function fn_list(no) {
 	//$('#currentPageNo').val(no);
-	window.location='<c:url value="/boardList.do"/>';
+	window.location='<c:url value="/web/boardList.do"/>';
 	
 	/* $('#boardForm').attr({
 		action : '<c:url value="/boardList.do"/>',
@@ -100,7 +100,7 @@ function fn_list(no) {
 
 function fn_sign_up() {
 	//$('#currentPageNo').val(no);
-	window.location='<c:url value="/signUp.do"/>';
+	window.location='<c:url value="/web/signUp.do"/>';
 	
 	/* $('#boardForm').attr({
 		action : '<c:url value="/boardList.do"/>',
@@ -113,7 +113,7 @@ function fn_sign_in() {
 	var formData = new FormData($("#boardForm")[0]);
 	
 	$.ajax({
-		url : "${pageContext.request.contextPath}/memberLogin.do",
+		url : "${pageContext.request.contextPath}/web/memberLogin.do",
 		type : "post",
 		enctype: 'multipart/form-data',
 		data : formData,
@@ -138,7 +138,7 @@ function fn_sign_in2() {
 	var formData = new FormData($("#boardForm")[0]);
 	
 	$.ajax({
-		url : "${pageContext.request.contextPath}/user/loginPost.do",
+		url : "${pageContext.request.contextPath}/web/user/loginPost.do",
 		type : "post",
 		enctype: 'multipart/form-data',
 		data : formData,
@@ -162,7 +162,7 @@ function fn_sign_in3() {
 	//var formData = $('#boardForm').serialize();
 	
 	$('#boardForm').attr({
-		action : '<c:url value="/user/register.do"/>',
+		action : '<c:url value="/web/user/register.do"/>',
 		target : '_self'
 	}).submit();
 }
