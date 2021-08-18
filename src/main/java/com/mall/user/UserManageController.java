@@ -37,7 +37,7 @@ public class UserManageController {
 		
 		model.addAttribute("info", info);
 		System.err.println("k:"+httpSession.getAttribute("k_userInfo"));
-		return "/user/myPage";
+		return "user/myPage";
 	}
 	
     @RequestMapping(value = "/updateUser.do", method = RequestMethod.POST)
@@ -59,7 +59,7 @@ public class UserManageController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-        return "/test";
+        return "test";
 //        return "redirect:/user/myPage.do";
     }
     
@@ -83,7 +83,7 @@ public class UserManageController {
     		} catch (Exception e) {
     			e.printStackTrace();
     		}
-    		return "/test";
+    		return "test";
 //        return "redirect:/user/myPage.do";
     }
 

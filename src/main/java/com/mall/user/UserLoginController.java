@@ -73,15 +73,15 @@ public class UserLoginController {
 		
 		System.err.println("로그인:"+paramMap.get("userInfo"));
 		if(paramMap.get("userInfo")!=null)
-			return "/test";
-		return "/user/login";
+			return "test";
+		return "user/login";
 	}
 	@RequestMapping(value="/kakaoLogin")
 	public String kakaoLogin( HttpServletRequest request, HttpServletResponse response, Model model, HttpSession session) {
 		String kakaoUrl = kakaoLogin.getAuthorizationUrl(session);
 		model.addAttribute("kakao_url", kakaoUrl);
 		
-		return "/user/login";
+		return "user/login";
 	}
 	
 
@@ -119,13 +119,13 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 		//신규회원일 경우 회원가입
 		//아이디 중복 아닐 경우
 		if(loginService.selectMember(id)==null)
-			return "/signUp";
+			return "signUp";
 		//기존회원일 경우 로그인
 		else {
 			model.addAttribute("msg","로그인이 완료되었습니다.");
-			return "/test";
+			return "test";
 		}
-//		return "/user/afterLogin";//ooooo
+//		return "user/afterLogin";//ooooo
 	}
 	@RequestMapping(value = "/naverOauth.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public String getNaverSignIn(ModelMap model, @RequestParam String state,  @RequestParam String code, HttpSession session)
@@ -180,11 +180,11 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 		//신규회원일 경우 회원가입
 		//아이디 중복 아닐 경우
 		if(loginService.selectMember(id)==null)
-			return "/signUp";
+			return "signUp";
 		//기존회원일 경우 로그인
 		else {
 			model.addAttribute("msg","로그인이 완료되었습니다.");
-			return "/test";
+			return "test";
 		}
 	}
 
@@ -245,8 +245,8 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 			e.printStackTrace();
 		}
 		
-//		return "/test";
-		return "/user/loginPost";
+//		return "test";
+		return "user/loginPost";
 	}
 
 	// 로그인 페이지
@@ -255,7 +255,7 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 			HttpSession httpSession, Model model) {
 		System.err.println(httpSession.getAttribute("login"));
 		model.addAttribute("login", httpSession.getAttribute("login"));
-		return "/user/afterLogin";
+		return "user/afterLogin";
 	}
 
 	// 로그아웃 처리
@@ -295,7 +295,7 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 //			e.printStackTrace();
 //		}
 //		System.err.println("go");
-//		return "/user/logout";
+//		return "user/logout";
 //	}
 
 }

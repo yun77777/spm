@@ -69,7 +69,8 @@
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
-          <a href="#" onclick="location.href='/test.do'">
+          <a href='<c:url value="/test.do"/>'>
+<!--           <a href="#" onclick="location.href='/test.do'"> -->
             <i class="fas fa-gem me-3"></i>댕댕몰
           </a></h6>
           <p>

@@ -155,14 +155,14 @@ $(document).ready(function(){
     		alert(checkArr);
     			
     		$.ajax({
-    			url : "/web/mng/deleteItems.do",
+    			url : "/mng/deleteItems.do",
     			type : "post",
     			data : { chbox : checkArr },
     			success : function(result){
     				
     				if(result == 1) {						
     					alert("삭제 완료");
-    					location.href = "/web/mng/itemList.do";
+    					location.href = "/mng/itemList.do";
     				} else {
     					alert("삭제 실패");
     				}
@@ -176,7 +176,7 @@ function fn_list(no) {
 	$('#currentPageNo').val(no);
 	
 	$('#boardForm').attr({
-		action : '<c:url value="/web/mng/itemList.do"/>',
+		action : '<c:url value="/mng/itemList.do"/>',
 		target : '_self'
 	}).submit();
 };
@@ -186,7 +186,7 @@ function fn_insert(id){
 		alert("You need to log in first");
 	else{
 		$('#boardForm').attr({
-			action : '<c:url value="/web/mng/itemInsert.do" />',
+			action : '<c:url value="/mng/itemInsert.do" />',
 			target : '_self'
 		}).submit();
 	}
@@ -203,7 +203,7 @@ function fn_detail(gdsNum){
 		$('#boardForm #gdsNum').val(gdsNum);
 		
 		$('#boardForm').attr({
-			action : '<c:url value="/web/mng/itemDetail.do" />',
+			action : '<c:url value="/mng/itemDetail.do" />',
 			target : '_self'
 		}).submit();
 	/* } */

@@ -34,7 +34,7 @@ public class UserRegisterController {
     // 회원가입 페이지
     @RequestMapping(value = "/register.do", method = RequestMethod.GET)
     public String registerGET() throws Exception {
-        return "/user/register";
+        return "user/register";
     }
 
     // 회원가입 처리
