@@ -305,7 +305,7 @@ function fn_order_detail_pop(orderId, pageType) {
 			orderContent += '<tr><td>연락처</td><td>'
 					+ (detailList[0].orderPhon) + '</td></tr>';
 			orderContent += '<tr><td>주소</td><td>'
-					+ (detailList[0].userAddr) + ', '
+					+ (detailList[0].userAddr1) + ', '
 					+ (detailList[0].userAddr2) + ', '
 					+ (detailList[0].userAddr3) + '</td></tr>';
 			orderContent += '</table>'

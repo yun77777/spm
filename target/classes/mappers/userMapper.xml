@@ -19,7 +19,7 @@
 		update member
 		set
 			ID = #{ID}
-			, PW = #{PW}
+			<!-- , PW = #{PW} -->
 			, NAME = #{NAME}
 			, ADDRESS = #{ADDRESS}
 			, CONTACT = #{CONTACT}

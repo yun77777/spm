@@ -48,21 +48,23 @@
 				<tr>
 					<td>아이디</td>
 					<td colspan="2"><input class="form-control" id="id"
-									name="ID" type="text" value=""/></td>
+									name="ID" type="text" value="" maxlength="20"/></td>
 				</tr>
 				
 				<tr>
 					<td>비밀번호</td>
-					<td colspan="2"><input class="form-control" id="pw"
-									name="PW" type="text" value="" required
+					<td colspan="2"><input class="form-control" id="pw" class="pwd"
+									name="PW" type="password" value="" maxlength="20" required
 									data-validation-required-message="Please enter your email address." /></td>
 				</tr>
 				<tr>
 					<td>비밀번호 확인</td>
-					<td colspan="2"><input class="form-control" id="pwChk"
-									name="pwChk" type="text" required
+					<td colspan="2"><input class="form-control" id="pwChk" class="pwd"
+									name="pwChk" type="password" maxlength="20" required
 									data-validation-required-message="Please enter your email address." /></td>
 				</tr>
+				 <span id="alert-success" style="display: none;">비밀번호가 일치합니다.</span>
+    <span id="alert-danger" style="display: none; color: #d92742; font-weight: bold; ">비밀번호가 일치하지 않습니다.</span>
 		</c:if>
 				<tr>
 					<td rowspan="2">주소</td>
@@ -81,13 +83,13 @@
 				<tr>
 					<td>이름</td>
 					<td colspan="2"><input class="form-control" id="name"
-									name="NAME" type="text" value="" required
+									name="NAME" type="text" value="" maxlength="20" required
 									data-validation-required-message="Please enter your email address." /></td>
 				</tr>
 				<tr>
 					<td>연락처</td>
 					<td colspan="2"><input class="form-control" id="contact" value=""
-									name="CONTACT" type="text" required
+									name="CONTACT" type="text" maxlength="20" required
 									data-validation-required-message="Please enter your email address." /></td>
 				</tr>
 				<tr>
@@ -98,8 +100,8 @@
 				</tr>
 				<tr>
 					<td>이메일 주소</td>
-					<td colspan="2"><input class="form-control" id="email" value=""
-									name="EMAIL" type="text" required
+					<td colspan="2"><input class="form-control" id="email" value="" maxlength="50"
+									name="EMAIL" type="email" required
 									data-validation-required-message="Please enter your email address." /></td>
 				</tr>
 				
@@ -151,6 +153,11 @@ function fn_list() {
 };
 
 function fn_sign_up() {
+	
+	if(!fn_check_pw){
+		alert('no');
+		return;
+	}
 	//var formData = $('#boardForm').serialize();
 	var wholeAddress=$("#sample2_postcode").val()+', '+$("#sample2_address").val()
 	+', '+$("#sample2_extraAddress").val()
@@ -192,6 +199,38 @@ function fn_sign_up2() {
 	}).submit();
 }
 
+function fn_check_pw(){
+
+	var reg = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+
+	var pw = $("#pw").val();
+
+	if(false === reg.test(pw)) {
+	alert('비밀번호는 8자 이상이어야 하며, 숫자/대문자/소문자/특수문자를 모두 포함해야 합니다.');
+	return false;
+	}else {
+	console.log("통과");
+	}
+	return true;
+	}
+	
+$('.pwd').focusout(function () {
+    var pwd1 = $("#pw").val();
+    var pwd2 = $("#pwChk").val();
+
+    if ( pwd1 != '' && pwd2 == '' ) {
+        null;
+    } else if (pwd1 != "" || pwd2 != "") {
+        if (pwd1 == pwd2) {
+            $("#alert-success").css('display', 'inline-block');
+            $("#alert-danger").css('display', 'none');
+        } else {
+            alert("비밀번호가 일치하지 않습니다. 비밀번호를 재확인해주세요.");
+            $("#alert-success").css('display', 'none');
+            $("#alert-danger").css('display', 'inline-block');
+        }
+    }
+});
 </script>
 
 </html>

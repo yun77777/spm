@@ -35,16 +35,10 @@
 				<!-- Page Heading/Breadcrumbs-->
 				<h1> 회원 정보 관리 </h1>
 				
-				<div class="row">
-					<div class="col-lg-8 mb-4">
 							
-			<div class="row">
-				<div class="col-12">
 					<button class="btn selectDelete_btn btn-info btn-sm float-right" onclick="fn_update()" type="submit">수정</button>
 					<button class="btn selectDelete_btn btn-danger btn-sm float-right" onclick="" type="submit">탈퇴</button>
-				</div>
-			</div>
-		<br>
+		<br><br>
 			<table class="table">
 				<tr>
 					<td>아이디</td>
@@ -114,12 +108,10 @@
 						<div id="success"></div>
                         
 					</div>
-				</div>
 			</form>
 		
 				
 			
-		</div>
 	</section>
 
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>

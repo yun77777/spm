@@ -44,7 +44,7 @@
  --%>			
  
              <button class="btn btn-secondary btn-sm float-right" id="" onclick="fn_list()" type="button">목록</button>
- 
+ 			<br>
 			<div class="inputArea">	
 				<label>1차 분류</label>
 				<select id="cateCode1" name="cateCode1" class="category1 form-control">

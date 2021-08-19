@@ -43,10 +43,11 @@
 				<!-- Content Row-->
 				<!-- Contact Form-->
 				<!-- In order to set the email address and subject line for the contact form go to the assets/mail/contact_me.php file.-->
-				<div class="row">
-		            <button class="btn btn-secondary btn-sm float-right" id="" onclick="fn_list()" type="button">목록</button>
+		           
 				
-					<div class="col-lg-8 mb-4">
+					 <button class="btn btn-secondary btn-sm float-right" id="" onclick="fn_list()" type="button">목록</button>
+					 <br>
+					 
 						<div class="control-group form-group">
 							<div class="controls">
 								<label>글번호:</label> <input class="form-control" id="no"
@@ -76,8 +77,6 @@
 							</div>
 						</div>
 						
-			</div>
-			</div>
 			</form>
 			
 			
