@@ -20,10 +20,16 @@
     
     function fn_sign_in() {
     	//var formData = $('#boardForm').serialize();
-    	$('#loginForm').attr({
-    		action : '<c:url value="/user/loginPost.do"/>',
-    		target : '_self'
-    	}).submit();
+    	var id=$('#id').val();
+    	var pw=$('#pw').val();
+    	if(id.length==0 || pw.length==0)
+    		alert('아이디와 비밀번호를 정확히 입력해주세요');
+    	else{
+    		$('#loginForm').attr({
+        		action : '<c:url value="/user/loginPost.do"/>',
+        		target : '_self'
+        	}).submit();
+    	}
     }
     
     function fn_itemList(itemType) {

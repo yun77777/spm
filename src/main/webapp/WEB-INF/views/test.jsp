@@ -371,7 +371,8 @@ function fn_detail_pop(B_NO,B_TYPE){
 			  
 			var img=imgList[i].file;
 			var file = $("#file").val(img);
-			var image="<c:url value='/img/"+img+"'/>"; //상품 상세 이미지
+			/* var image="<c:url value='/img/"+img+"'/>"; //상품 상세 이미지 */
+			var image="https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/"+img;//상품 상세 이미지
 			  $("#pp").append("<img class='card-img-top' src="+image+"><br><br>");
 /* 			  $("#pp").append(i+"<img class='card-img-top scale' src="+image+"><br>"); */
 			 
@@ -396,8 +397,7 @@ function fn_detail_pop(B_NO,B_TYPE){
 		$("#orderForm #gdsDes").val(detail.gdsDes);
 		
 		//$("#gdsDes").val("새로운 값을 지정합니다.");  //텍스트 에어리어에 새로 값을 지정.
-		
-		$("#rpsnImg").attr("src","<c:url value='/img/"+img+"'/>");
+		$("#rpsnImg").attr("src","https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/"+img);
 		console.log('================================');
 		
 		//제품상세(기존)

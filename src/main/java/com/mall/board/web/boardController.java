@@ -65,6 +65,7 @@ public class boardController {
 		model.addAttribute("login",httpSession.getAttribute("login"));
 		model.addAttribute("member",httpSession.getAttribute("member"));
 		model.addAttribute("k_userInfo", httpSession.getAttribute("k_userInfo"));
+		model.addAttribute("msg", httpSession.getAttribute("msg"));
 		System.err.println("kxx:"+httpSession.getAttribute("k_userInfo"));
 
 		

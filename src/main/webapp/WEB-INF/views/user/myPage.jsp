@@ -38,10 +38,14 @@
 				
 				<div class="row">
 					<div class="col-lg-8 mb-4">
-						
-				<div class="control-group form-group">
-		
+							
+			<div class="row">
+				<div class="col-12">
+					<button class="btn selectDelete_btn btn-info btn-sm float-right" onclick="fn_update()" type="submit">수정</button>
+					<button class="btn selectDelete_btn btn-danger btn-sm float-right" onclick="" type="submit">탈퇴</button>
+				</div>
 			</div>
+		<br>
 			<table class="table">
 				<tr>
 					<td>아이디</td>
@@ -104,9 +108,6 @@
 				
 			</table>
 			
-			
-			
-			
 						<!-- iOS에서는 position:fixed 버그가 있음, 적용하는 사이트에 맞게 position:absolute 등을 이용하여 top,left값 조정 필요 -->
 						<div id="layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
 						<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
@@ -116,8 +117,9 @@
 					</div>
 				</div>
 			</form>
-			<button class="btn selectDelete_btn btn-info btn-sm float-right" onclick="fn_update()" type="submit">수정</button>
-			<button class="btn selectDelete_btn btn-danger btn-sm float-right" onclick="" type="submit">탈퇴</button>
+		
+				
+			
 		</div>
 	</section>
 
@@ -164,7 +166,6 @@ function fn_update() {
 	+', '+$("#sample2_detailAddress").val();
 /* 	var wholeAddress=$("#postalCode").val()+', '+$("#address").val()+', '+$("#addressDetail").val(); */
 	$("#wholeAddress").val(wholeAddress);
-	alert('update');
 	$('#boardForm #id').attr('disabled',false);
 	$("input[name=ADDRESS]").val(wholeAddress);
 	var formData = new FormData($("#boardForm")[0]);

@@ -39,9 +39,19 @@
 				상품 관리
 				</h1>
 			    
-				<div class="row">
 				
-				<div class="col-lg-8 mb-4">
+				<div class="row">
+					<div class="col-12">
+						<button type="button" onclick="" id="delete_btn" class="btn btn-danger btn-sm float-right">삭제</button>			
+						<button class="btn btn-info btn-sm float-right" onclick="fn_insert('${member.ID}')" type="button">추가</button>
+					</div>
+				</div>
+          		<span>총 <em>${pg.totalRecordCount}</em>건 </span>
+                
+                
+                
+                
+			<%-- 	<div class="col-lg-8 mb-4">
 					<div class="control-group form-group">
 						<div id="success"></div>
 						<!-- //search-->
@@ -49,7 +59,7 @@
 						<button class="btn btn btn-info btn-sm float-right mr-1" onclick="fn_insert('${member.ID}')" type="button">추가</button>
 					</div>
 				</div>
-          		<span>전체: <em>${pg.totalRecordCount}</em> 건</span>
+          		<span>전체: <em>${pg.totalRecordCount}</em> 건</span> --%>
                 
 				<table class="table table-sm">
 					<thead class="thead-light text-center">
@@ -70,7 +80,7 @@
 					</thead>
 					<tbody>
 						<c:forEach var="result" items="${list}" varStatus="status">
-							<tr>
+							<tr class="text-center">
 								<th>
 									<div class="checkBox">
 										<input type="checkbox" name="chBox" class="chBox" data-cid="${result.gdsNum}" />

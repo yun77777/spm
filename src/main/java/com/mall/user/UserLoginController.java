@@ -211,13 +211,21 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 		paramMap.put("ID", loginDTO.getID());
 		paramMap.put("PW", loginDTO.getPW());
 		System.err.println("param:" + paramMap);
+		System.err.println("id:"+loginDTO.getID());
+		System.err.println("pw:"+loginDTO.getPW());
+		System.err.println("login:"+userService.login(loginDTO));
 		try {
 
-			if (userService.login(loginDTO) != null) {
+			if (userService.login(loginDTO) == null){
+//				if (userService.login(loginDTO) == null || loginDTO != null && !loginDTO.getID().equals("") && !loginDTO.getPW().equals("")){
+//	            model.addAttribute("msg","회원정보가 일치하지 않습니다.");
+				return "forward:/test.do";
+	            
+	        } else {
+			
 //            	if (userVO == null || !BCrypt.checkpw(loginDTO.getPW(), userVO.get("PW").toString())) {
 
 				Map<String, Object> userVO = userService.login(loginDTO);
-				if(userVO!=null) {
 					model.addAttribute("user", userVO);
 					model.addAttribute("id", userVO.get("ID"));
 
@@ -239,14 +247,15 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 					}
 				}
 				
-			}
+				
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 //		return "test";
-		return "user/loginPost";
+//		return "user/loginPost";
+        
+        return "redirect:/test.do";
 	}
 
 	// 로그인 페이지

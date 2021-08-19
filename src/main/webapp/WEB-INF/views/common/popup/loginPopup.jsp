@@ -11,7 +11,8 @@
 <div id="myModal" class="modal fade">
 	<div class="modal-dialog modal-login">
 		<div class="modal-content">
- 		<form id="loginForm" method="post" enctype="">
+<%--  		<form id="loginForm" method="post" enctype="">
+ --%> 		<form id="loginForm" method="post" enctype="multipart/form-data">
 				<div class="modal-header bg-whitesmoke">				
 					<h4 class="modal-title">로그인</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

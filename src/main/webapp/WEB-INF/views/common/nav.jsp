@@ -53,7 +53,7 @@
 				<li class="nav-item ml-5"><a class="nav-link" href="#" onclick="fn_itemList('shoes')">신발</a></li>
 				<li class="nav-item ml-5"><a class="nav-link" href="#" onclick="fn_itemList('pet')">반려동물용품</a></li>
 				
-				<li class="nav-item ml-5"><a class="nav-link" href='<c:url value="boardList"/>'>게시판</a></li>
+				<li class="nav-item ml-5"><a class="nav-link" href='<c:url value="boardList.do"/>'>게시판</a></li>
 <!-- 				<li class="nav-item ml-5"><a class="nav-link" href="/boardList.do">게시판</a></li> -->
                 <li class="nav-item ml-5"><a class="nav-link" href="#" onclick="fn_chk_login('${member.ID}','cart')">장바구니</a></li>
 <%--                 <li class="nav-item ml-5"><a class="nav-link" href="#" onclick="fn_chk_login('${member.ID}')"><img src="<c:url value='/resources/img/cart.png'/>" alt="..." style="width:35px; height:auto;"></a></li> --%>
