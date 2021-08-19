@@ -205,7 +205,7 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 
 	// 로그인 처리
 	@RequestMapping(value = "/loginPost.do", method = RequestMethod.POST)
-	public String loginPOST(Map<String, Object> paramMap, LoginDTO loginDTO, HttpSession httpSession, Model model)
+	public void loginPOST(Map<String, Object> paramMap, LoginDTO loginDTO, HttpSession httpSession, Model model)
 			throws Exception {
 
 		paramMap.put("ID", loginDTO.getID());
@@ -213,19 +213,19 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 		System.err.println("param:" + paramMap);
 		System.err.println("id:"+loginDTO.getID());
 		System.err.println("pw:"+loginDTO.getPW());
-		System.err.println("login:"+userService.login(loginDTO));
+		System.err.println("login:"+userService.login(paramMap));
 		try {
 
-			if (userService.login(loginDTO) == null){
+			if (userService.login(paramMap) == null){
 //				if (userService.login(loginDTO) == null || loginDTO != null && !loginDTO.getID().equals("") && !loginDTO.getPW().equals("")){
 //	            model.addAttribute("msg","회원정보가 일치하지 않습니다.");
-				return "forward:/test.do";
+//				return "forward:test.do";
 	            
 	        } else {
 			
 //            	if (userVO == null || !BCrypt.checkpw(loginDTO.getPW(), userVO.get("PW").toString())) {
 
-				Map<String, Object> userVO = userService.login(loginDTO);
+				Map<String, Object> userVO = userService.login(paramMap);
 					model.addAttribute("user", userVO);
 					model.addAttribute("id", userVO.get("ID"));
 
@@ -252,10 +252,11 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 //		return "test";
 //		return "user/loginPost";
         
-        return "redirect:/test.do";
+//        return "redirect:test.do";
 	}
 
 	// 로그인 페이지

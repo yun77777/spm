@@ -14,7 +14,6 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Modern Business - Start Bootstrap Template</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"

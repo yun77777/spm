@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- Page header-->
+<title>사랑이 가득한 댕댕몰에 오신 것을 환영합니다!</title>
         <header>
             <div class="carousel slide" id="carouselExampleIndicators" data-ride="carousel">
                 <ol class="carousel-indicators">

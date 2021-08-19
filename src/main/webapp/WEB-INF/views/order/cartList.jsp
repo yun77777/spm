@@ -83,7 +83,7 @@
 										data-toggle="modal" data-target="#exampleModalLong"> 
 										<!-- <img class="card-img-top rounded" -->
 										<img class="card-img-top"
-											src="<c:url value='/img/${cartList.representative_file}'/>"
+											<%-- src="<c:url value='/img/${cartList.representative_file}'/>" --%>
 											src="https://mybuckets3s3.s3.ap-northeast-2.amazonaws.com/${cartList.representative_file}"
 											style="height: 200px;width:auto" alt="no image" />
 									</a>

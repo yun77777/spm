@@ -65,9 +65,12 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	        
 	        if(n_userInfo!=null & member==null) {
 				//response.sendRedirect("/test.do");
+	        	return;
 	        }else {
 	        	Object destination = httpSession.getAttribute("destination");
-				response.sendRedirect(destination != null ? (String) destination : "/test.do");
+	        	String cPath=request.getContextPath();
+				response.sendRedirect(destination != null ? (String) destination : cPath+"/test.do");
+				return ;
 	        }
 	        
 //	        response.sendRedirect(destination != null ? (String) destination : "/");

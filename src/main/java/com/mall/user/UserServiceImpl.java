@@ -48,8 +48,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Map<String, Object> login(LoginDTO loginDTO) throws Exception {
-		return userMapper.login(loginDTO);
+	public Map<String, Object> login(Map<String, Object> paramMap) throws Exception {
+		return userMapper.login(paramMap);
 
 	}
 	@Override

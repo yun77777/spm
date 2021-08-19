@@ -14,7 +14,6 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Modern Business - Start Bootstrap Template</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 <!-- Font Awesome icons (free version)-->
@@ -178,7 +177,8 @@ $.ajax({
 	processData : false,
 	contentType : false,
 	success : function(result) {
-		alert('회원정보가 수정되었습니다.');
+		if(result=='success')
+			alert('회원정보가 수정되었습니다.');
 	}, // success 
 
 	error : function(xhr, status) {
