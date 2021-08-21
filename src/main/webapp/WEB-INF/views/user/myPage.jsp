@@ -123,7 +123,8 @@
 	<script src="<c:url value='/resources/js/scripts.js'/>"></script>
 	
 	
-	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+	<script src="https://spi.maps.daum.net/imap/map_js_init/postcode.v2.js"></script>
+<!-- 	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script> -->
 	<%@ include file="/WEB-INF/views/common/commonFunction.jsp"%>
 </body>
 

@@ -80,7 +80,7 @@
 								<div class="">
 									<a href="#!"
 										onclick="fn_detail_pop('${cartList.gdsNum}')"
-										data-toggle="modal" data-target="#exampleModalLong"> 
+										data-toggle="modal" data-target="#orderPopup"> 
 										<!-- <img class="card-img-top rounded" -->
 										<img class="card-img-top"
 											<%-- src="<c:url value='/img/${cartList.representative_file}'/>" --%>
@@ -166,7 +166,7 @@
 				<input type="hidden" id="type" name="cart" />
 			</form>	
 			<div class="inputArea">
-				<button type="submit" onclick="fn_order()" class="order_btn selectDelete_btn btn btn-info btn-sm float-right">주문</button>
+				<button type="submit" onclick="fn_order()" class="order_btn selectDelete_btn btn btn-info btn-sm float-right ml-3">주문</button>
 				<button type="button" class="cancel_btn selectDelete_btn btn btn-danger btn-sm float-right">취소</button>
 				
 				<script>

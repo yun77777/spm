@@ -25,7 +25,8 @@ public class KakaoController {
   private final static String K_CLIENT_ID = "8ec4c5e4b41aba30453d25fa8512e604";
 //  private final static String K_REDIRECT_URI = "/user/loginAfter.do";
 //  private final static String K_REDIRECT_URI = "http://localhost:8080/user/login.do";
-  private final static String K_REDIRECT_URI = "http://localhost:8080/user/kakaoOauth.do";
+  private final static String K_REDIRECT_URI = "https://wealllovedogs.ml/web/user/kakaoOauth.do";
+//  private final static String K_REDIRECT_URI = "http://localhost:8080/user/kakaoOauth.do";
 //  private final static String K_CLIENT_ID = "나의 앱 키 입력";
 //  private final static String K_REDIRECT_URI = "리다이렉트 주소입력";
 

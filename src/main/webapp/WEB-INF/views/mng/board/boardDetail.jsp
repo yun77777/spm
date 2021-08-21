@@ -15,7 +15,7 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 <!-- Favicon-->
-<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="./resources/assets/favicon.ico" />
 <style>
 body {
     background-color: #f7f6f6

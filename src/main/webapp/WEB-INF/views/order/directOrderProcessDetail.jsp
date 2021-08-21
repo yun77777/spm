@@ -84,7 +84,7 @@
 								<td> <fmt:formatNumber pattern="###,###,###" value="${sum}" />원</td>
 							</tr>
 							<tr>
-								<td>최종 가격</td>
+								<td>합계</td>
 								<td><fmt:formatNumber pattern="###,###,###" value="${paramMap.gdsStock * paramMap.gdsPrice}" /> 원</td>
 							</tr>
 						</table>
@@ -122,8 +122,7 @@
 			<div id="layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
 			<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
 			</div>
-			
-			<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+			<script src="https://spi.maps.daum.net/imap/map_js_init/postcode.v2.js"></script>
 			<script>
 			    // 우편번호 찾기 화면을 넣을 element
 			    var element_layer = document.getElementById('layer');
@@ -214,6 +213,7 @@
 					</form>	
 					<div class="inputArea">
 						<button type="submit" onclick="fn_order()" class="order_btn btn btn-info btn-sm float-right ml-3">주문</button>
+						<button type="submit" onclick="fn_order('ini')" class="order_btn btn btn-info btn-sm float-right ml-3">이니시스 결제</button>
 						<button type="button" class="cancel_btn btn btn-danger btn-sm float-right">취소</button>
 						
 						<script>
@@ -226,7 +226,6 @@
 						
 					</div>
 					
-				
 			</div>
 			
 			
@@ -287,50 +286,55 @@ function fn_btn(no){
 
 
 		
-function fn_order(){
-	var formData = new FormData($("#boardForm")[0]);
-	$.ajax({
-		url : "${pageContext.request.contextPath}/orderList.do",
-		type : "post",
-		enctype: 'multipart/form-data',
-		data : formData,
-		processData : false,
-		contentType : false,
-		success : function(result) {
-			alert('주문이 완료되었습니다.');
-		   	location.replace("/orderList2.do");
-		}, // success 
-
-		error : function(xhr, status) {
-			alert(xhr + " : " + status);
-		}
-	}); 
-			/* 
-			IMP.init('imp46639314');
-		    IMP.request_pay({
-		        pg : 'html5_inicis',
-		        pay_method : 'card',
-		        merchant_uid : 'merchant_' + new Date().getTime(),
-		        name : '주문명:결제테스트',
-		        amount : 100,
-		        buyer_email : 'iamport@siot.do',
-		        buyer_name : '구매자이름',
-		        buyer_tel : '010-1234-5678',
-		        buyer_addr : '서울특별시 강남구 삼성동',
-		        buyer_postcode : '123-456'
-		    }, function(rsp) {
-		        if ( rsp.success ) {
+function fn_order(type){
+	if(type!='ini'){
+		var formData = new FormData($("#boardForm")[0]);
+		$.ajax({
+			url : "${pageContext.request.contextPath}/orderList.do",
+			type : "post",
+			enctype: 'multipart/form-data',
+			data : formData,
+			processData : false,
+			contentType : false,
+			success : function(result) {
+				alert('주문이 완료되었습니다.');
+			   	location.replace("${pageContext.request.contextPath}/orderList2.do");
+			}, // success 
+	
+			error : function(xhr, status) {
+				alert(xhr + " : " + status);
+			}
+		}); 
+	}
+	else{
+		IMP.init('imp46639314');
+	    IMP.request_pay({
+	        pg : 'html5_inicis',
+	        pay_method : 'card',
+	        merchant_uid : 'merchant_' + new Date().getTime(),
+	        name : '주문명:결제테스트',
+	        amount : 100,
+	        buyer_email : 'iamport@siot.do',
+	        buyer_name : '구매자이름',
+	        buyer_tel : '010-1234-5678',
+	        buyer_addr : '서울특별시 강남구 삼성동',
+	        buyer_postcode : '123-456'
+	    }, function(rsp) {
+	    	 if ( rsp.success ) {
 		            var msg = '결제가 완료되었습니다.';
 		            msg += '고유ID : ' + rsp.imp_uid;
 		            msg += '상점 거래ID : ' + rsp.merchant_uid;
 		            msg += '결제 금액 : ' + rsp.paid_amount;
 		            msg += '카드 승인번호 : ' + rsp.apply_num;
 		            
-		            $("#imp_uid").value(rsp.imp_uid);
-		            $("#merchant_uid").value(rsp.merchant_uid);
-		            $("#paid_amount").value(rsp.paid_amount);
-		            $("#apply_num").value(rsp.apply_num);
-	         
+		            alert(msg);
+		            
+		            $("#imp_uid").val(rsp.imp_uid);
+		            $("#merchant_uid").val(rsp.merchant_uid);
+		            $("#paid_amount").val(rsp.paid_amount);
+		            $("#apply_num").val(rsp.apply_num);
+	         		
+		            alert($("#imp_uid").val());
 		            var formData = new FormData($("#boardForm")[0]);
 		        	$.ajax({
 		        		url : "${pageContext.request.contextPath}/orderList.do",
@@ -341,6 +345,7 @@ function fn_order(){
 		        		contentType : false,
 		        		success : function(result) {
 		        			alert('주문이 완료되었습니다.');
+		        			window.location='<c:url value="/orderList2.do"/>';
 		        		}, // success 
 
 		        		error : function(xhr, status) {
@@ -353,9 +358,10 @@ function fn_order(){
 		            msg += '에러내용 : ' + rsp.error_msg;
 		        }
 
-		        alert(msg);
-		    });	 
-		    */
+	        alert(msg);
+	    });	 
+	}
+			
 		    
 		    
 		    

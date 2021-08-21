@@ -68,7 +68,8 @@
 
 	<c:if test="${id eq null}">
 <%-- 	<c:if test="${userId eq null}"> --%>
-		      <a class="nav-link" href="https://kauth.kakao.com/oauth/authorize?client_id=8ec4c5e4b41aba30453d25fa8512e604&redirect_uri=http://localhost:8080/user/kakaoOauth.do&response_type=code">
+		      <a class="nav-link" href="https://kauth.kakao.com/oauth/authorize?client_id=8ec4c5e4b41aba30453d25fa8512e604&redirect_uri=https://wealllovedogs.ml/web/user/kakaoOauth.do&response_type=code">
+<!-- 		      <a class="nav-link" href="https://kauth.kakao.com/oauth/authorize?client_id=8ec4c5e4b41aba30453d25fa8512e604&redirect_uri=http://localhost:8080/user/kakaoOauth.do&response_type=code"> -->
 		          <span><img height="53" src="<c:url value='/resources/img/btn_kakao.png'/>"></span>
 		      </a>
 			<%-- <li onclick="kakaoLogin();">

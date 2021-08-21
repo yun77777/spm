@@ -39,7 +39,7 @@
 		<c:if test="${id eq null}">
 		<div class="align-self-center mt-2">
 			<span class="pull-right">
-			      <a class="" href="https://kauth.kakao.com/oauth/authorize?client_id=8ec4c5e4b41aba30453d25fa8512e604&redirect_uri=http://localhost:8080/user/kakaoOauth.do&response_type=code">
+			      <a class="" href="https://kauth.kakao.com/oauth/authorize?client_id=8ec4c5e4b41aba30453d25fa8512e604&redirect_uri=https://wealllovedogs.ml/web/user/kakaoOauth.do&response_type=code">
 			          <img height="53" src="<c:url value='/resources/img/btn_kakao.png'/>">
 			      </a></span>
 			 <span class="pull-left">     

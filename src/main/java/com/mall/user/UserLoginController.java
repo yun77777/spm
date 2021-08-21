@@ -200,7 +200,7 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 		session.invalidate();
 		//카카오 로그아웃
 
-		return "redirect:";
+		return "main";
 	}
 
 	// 로그인 처리

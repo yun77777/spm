@@ -132,10 +132,7 @@
     		
     		console.log('================================');
     		
-    		$("#reviewDiv").html('zxczx');
-    		$("#reviewDiv").append('<a href="#reviewPopup" class="nav-link" data-toggle="modal" onclick="fn_detail_pop('+detail.gdsNum+')">리뷰</a>');
-    		
-    		
+/*     		$("#reviewDiv").append('<a href="#reviewPopup" class="nav-link" data-toggle="modal" onclick="fn_detail_pop('+detail.gdsNum+')">리뷰</a>'); */
     		
     		//제품상세(기존)
     		$("#create2").on("click",function(){ 
