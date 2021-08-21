@@ -42,7 +42,7 @@
 				
 				<div class="row">
 					<div class="col-12">
-						<button type="button" onclick="" id="delete_btn" class="btn btn-danger btn-sm float-right">삭제</button>			
+						<button type="button" onclick="" id="delete_btn" class="btn btn-danger btn-sm float-right ml-3">삭제</button>			
 						<button class="btn btn-info btn-sm float-right" onclick="fn_insert('${member.ID}')" type="button">추가</button>
 					</div>
 				</div>

@@ -229,8 +229,8 @@
 					
 					
 					<div class="inputArea">
-						<button type="submit" onclick="fn_order()" class="order_btn btn btn-info btn-sm float-right ml-3">주문</button>
-						<button type="submit" onclick="fn_order('ini')" class="order_btn btn btn-info btn-sm float-right ml-3">이니시스 결제</button>
+<!-- 						<button type="submit" onclick="fn_order()" class="order_btn btn btn-info btn-sm float-right ml-3">주문</button> -->
+						<button type="submit" onclick="fn_order('ini')" class="order_btn btn btn-info btn-sm float-right ml-3">주문</button>
 						<button type="button" class="cancel_btn btn btn-danger btn-sm float-right">취소</button>
 						
 						<script>

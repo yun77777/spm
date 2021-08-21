@@ -212,8 +212,8 @@
 			</script>
 					</form>	
 					<div class="inputArea">
-						<button type="submit" onclick="fn_order()" class="order_btn btn btn-info btn-sm float-right ml-3">주문</button>
-						<button type="submit" onclick="fn_order('ini')" class="order_btn btn btn-info btn-sm float-right ml-3">이니시스 결제</button>
+<!-- 						<button type="submit" onclick="fn_order()" class="order_btn btn btn-info btn-sm float-right ml-3">주문</button> -->
+						<button type="submit" onclick="fn_order('ini')" class="order_btn btn btn-info btn-sm float-right ml-3">주문</button>
 						<button type="button" class="cancel_btn btn btn-danger btn-sm float-right">취소</button>
 						
 						<script>
@@ -327,14 +327,14 @@ function fn_order(type){
 		            msg += '결제 금액 : ' + rsp.paid_amount;
 		            msg += '카드 승인번호 : ' + rsp.apply_num;
 		            
-		            alert(msg);
+		            //alert(msg);
 		            
 		            $("#imp_uid").val(rsp.imp_uid);
 		            $("#merchant_uid").val(rsp.merchant_uid);
 		            $("#paid_amount").val(rsp.paid_amount);
 		            $("#apply_num").val(rsp.apply_num);
 	         		
-		            alert($("#imp_uid").val());
+		           // alert($("#imp_uid").val());
 		            var formData = new FormData($("#boardForm")[0]);
 		        	$.ajax({
 		        		url : "${pageContext.request.contextPath}/orderList.do",

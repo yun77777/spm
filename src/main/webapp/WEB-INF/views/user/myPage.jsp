@@ -37,26 +37,31 @@
 				
 							
 					<button class="btn selectDelete_btn btn-info btn-sm float-right" onclick="fn_update()" type="button">수정</button>
-					<button class="btn selectDelete_btn btn-danger btn-sm float-right" onclick="" type="submit">탈퇴</button>
+<!-- 					<button class="btn selectDelete_btn btn-danger btn-sm float-right" onclick="" type="submit">탈퇴</button> -->
 		<br><br>
 			<table class="table">
 				<tr>
 					<td>아이디</td>
-					<td colspan="2"><input class="form-control" id="id"
-									name="ID" type="text" value="${member.ID}" disabled/></td>
+					<td colspan="2">
+						<div class="form-group w-25">
+						<input class="form-control" id="id" name="ID" type="text" value="${member.ID}" disabled/>
+						</div>
+					</td>
 				</tr>
-				<c:if test="${empty member.k_userInfo and member.u_userInfo}">	
+				
+				
+				<c:if test="${empty member.k_userInfo and empty member.u_userInfo}">	
 				<tr>
 					<td>비밀번호</td>
-					<td colspan="2"><input class="form-control" id="pw"
-									name="PW" type="text" value="${info.PW}" required
-									data-validation-required-message="Please enter your email address." /></td>
+					<td colspan="2"><div class="form-group w-25"><input class="form-control" id="pw"
+									name="PW" type="password" value="${info.PW}" required
+									data-validation-required-message="Please enter your email address." /></div></td>
 				</tr>
 				<tr>
 					<td>비밀번호 확인</td>
-					<td colspan="2"><input class="form-control" id="pwChk"
-									name="pwChk" type="text" required
-									data-validation-required-message="Please enter your email address." /></td>
+					<td colspan="2"><div class="form-group w-25"><input class="form-control" id="pwChk"
+									name="pwChk" type="password" required
+									data-validation-required-message="Please enter your email address." /><div class="form-group w-25"></td>
 				</tr>
 		</c:if>
 				<tr>
@@ -75,27 +80,27 @@
 				</tr>
 				<tr>
 					<td>이름</td>
-					<td colspan="2"><input class="form-control" id="name"
+					<td colspan="2"><div class="form-group w-25"><input class="form-control" id="name"
 									name="NAME" type="text" value="${info.NAME}" required
-									data-validation-required-message="Please enter your email address." /></td>
+									data-validation-required-message="Please enter your email address." /></div></td>
 				</tr>
 				<tr>
 					<td>연락처</td>
-					<td colspan="2"><input class="form-control" id="contact" value="${info.CONTACT}"
+					<td colspan="2"><div class="form-group w-25"><input class="form-control" id="contact" value="${info.CONTACT}"
 									name="CONTACT" type="text" required
-									data-validation-required-message="Please enter your email address." /></td>
+									data-validation-required-message="Please enter your email address." /></div></td>
 				</tr>
 				<tr>
 					<td>휴대폰 번호</td>
-					<td colspan="2"><input class="form-control" id="phone"
+					<td colspan="2"><div class="form-group w-25"><input class="form-control" id="phone"
 									name="PHONE" type="text" required value="${info.PHONE}"
-									data-validation-required-message="Please enter your email address." /></td>
+									data-validation-required-message="Please enter your email address." /></div></td>
 				</tr>
 				<tr>
 					<td>이메일 주소</td>
-					<td colspan="2"><input class="form-control" id="email" value="${info.EMAIL}"
+					<td colspan="2"><div class="form-group w-25"><input class="form-control" id="email" value="${info.EMAIL}"
 									name="EMAIL" type="text" required
-									data-validation-required-message="Please enter your email address." /></td>
+									data-validation-required-message="Please enter your email address." /></div></td>
 				</tr>
 				
 				
@@ -151,40 +156,124 @@ function fn_list(no) {
 };
 
 
-function fn_update() {
-	//var formData = $('#boardForm').serialize();
-	var wholeAddress=$("#sample2_postcode").val()+', '+$("#sample2_address").val()
-	+', '+$("#sample2_extraAddress").val()
-	+', '+$("#sample2_detailAddress").val();
-/* 	var wholeAddress=$("#postalCode").val()+', '+$("#address").val()+', '+$("#addressDetail").val(); */
-	$("#wholeAddress").val(wholeAddress);
-	$('#boardForm #id').attr('disabled',false);
-	$("input[name=ADDRESS]").val(wholeAddress);
-	var formData = new FormData($("#boardForm")[0]);
 
-$.ajax({
-	url : "${pageContext.request.contextPath}/user/updateUser.do",
-	type : "post",
-	enctype: 'multipart/form-data',
-	data : formData,
-	processData : false,
-	contentType : false,
-	success : function(result) {
-		if(result=='success')
-			alert('회원정보가 수정되었습니다.');
-	}, // success 
+function fn_check() {
+	var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
+	var getCheck = RegExp(/^[a-zA-Z0-9]{4,12}$/);
+	var getName = RegExp(/^[가-힣]+$/);
+	var fmt = RegExp(/^\d{6}[1234]\d{6}$/); //형식 설정 
+	var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
 
-	error : function(xhr, status) {
-		alert(xhr + " : " + status);
+	if ($("#contact").val() == "") {
+		alert("연락처를 입력해주세요");
+		$("#contact").focus();
+		return false;
+	} //연락처 유효성검사
+	if (!regExp.test($("#contact").val())) {
+		alert("형식에 맞게 입력해주세요");
+		$("#contact").val("");
+		$("#contact").focus();
+		return false;
+	} 
+	
+	if ($("#phone").val() == "") {
+		alert("휴대폰 번호를 입력해주세요");
+		$("#phone").focus();
+		return false;
+	} //휴대폰 번호 유효성검사
+	if (!regExp.test($("#phone").val())) {
+		alert("형식에 맞게 입력해주세요");
+		$("#phone").val("");
+		$("#phone").focus();
+		return false;
+	} 
+	
+	//비밀번호 공백 확인 
+	if ($("#pw").val() == "") {
+		alert("패스워드를 입력해주세요");
+		$("#pw").focus();
+		return false;
+	} //아이디 비밀번호 같음 확인 
+	if ($("#id").val() == $("#pw").val()) {
+		alert("아이디와 비밀번호가 같습니다");
+		$("#pw").val("");
+		$("#pw").focus();
+		return false;
+	} //비밀번호 유효성검사 
+	if (!getCheck.test($("#pw").val())) {
+		alert("형식에 맞게 입력해주세요");
+		$("#pw").val("");
+		$("#pw").focus();
+		return false;
+	} //비밀번호 확인란 공백 확인 
+	if ($("#pwChk").val() == "") {
+		alert("패스워드 확인란을 입력해주세요");
+		$("#pwChk").focus();
+		return false;
+	} //비밀번호 서로확인
+	if ($("#pw").val() != $("#pwChk").val()) {
+		alert("비밀번호가 상이합니다");
+		$("#pw").val("");
+		$("#pwChk").val("");
+		$("#pw").focus();
+		return false;
+	} //이메일 공백 확인 
+	if ($("#email").val() == "") {
+		alert("이메일을 입력해주세요");
+		$("#email").focus();
+		return false;
+	} //이메일 유효성 검사 
+	if (!getMail.test($("#email").val())) {
+		alert("이메일형식에 맞게 입력해주세요")
+		$("#email").val("");
+		$("#email").focus();
+		return false;
+	} //이름 공백 검사 
+	if ($("#name").val() == "") {
+		alert("이름을 입력해주세요");
+		$("#name").focus();
+		return false;
+	} //이름 유효성 검사 
+	if (!getName.test($("#name").val())) {
+		alert("이름형식에 맞게 입력해주세요")
+		$("#name").val("");
+		$("#name").focus();
+		return false;
 	}
-});
+	return true;
+}
 
+function fn_update() {
+	if(fn_check()){
+		//var formData = $('#boardForm').serialize();
+		var wholeAddress=$("#sample2_postcode").val()+', '+$("#sample2_address").val()
+		+', '+$("#sample2_extraAddress").val()
+		+', '+$("#sample2_detailAddress").val();
+	/* 	var wholeAddress=$("#postalCode").val()+', '+$("#address").val()+', '+$("#addressDetail").val(); */
+		$("#wholeAddress").val(wholeAddress);
+		$('#boardForm #id').attr('disabled',false);
+		$("input[name=ADDRESS]").val(wholeAddress);
+		var formData = new FormData($("#boardForm")[0]);
 
+	$.ajax({
+		url : "${pageContext.request.contextPath}/user/updateUser.do",
+		type : "post",
+		enctype: 'multipart/form-data',
+		data : formData,
+		processData : false,
+		contentType : false,
+		success : function(result) {
+			if(result=='success')
+				alert('회원정보가 수정되었습니다.');
+		}, // success 
 
-	/* $('#boardForm').attr({
-		action : '<c:url value="/user/updateUser.do"/>',
-		target : '_self'
-	}).submit(); */
+		error : function(xhr, status) {
+			alert(xhr + " : " + status);
+		}
+	});
+
+	}
+	
 }
 
 </script>
