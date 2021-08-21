@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -40,9 +41,11 @@ public class UserManageController {
 		return "user/myPage";
 	}
 	
-    @RequestMapping(value = "/updateUser.do", method = RequestMethod.POST)
+	@ResponseBody
+    @RequestMapping(value = "/updateUser.do")
     public String updateUser(@RequestParam Map<String, Object> paramMap, 
-			HttpSession httpSession, Model model) throws Exception {    	try {
+			HttpSession httpSession, Model model) throws Exception {    	
+		try {
 			model.addAttribute("member",httpSession.getAttribute("member"));
 			model.addAttribute("k_userInfo", httpSession.getAttribute("k_userInfo"));
 
@@ -59,7 +62,7 @@ public class UserManageController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-        return "test";
+        return "success";
 //        return "redirect:/user/myPage.do";
     }
     
@@ -83,7 +86,7 @@ public class UserManageController {
     		} catch (Exception e) {
     			e.printStackTrace();
     		}
-    		return "test";
+    		return "main";
 //        return "redirect:/user/myPage.do";
     }
 

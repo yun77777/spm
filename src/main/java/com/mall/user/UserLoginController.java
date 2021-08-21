@@ -73,7 +73,7 @@ public class UserLoginController {
 		
 		System.err.println("로그인:"+paramMap.get("userInfo"));
 		if(paramMap.get("userInfo")!=null)
-			return "test";
+			return "main";
 		return "user/login";
 	}
 	@RequestMapping(value="/kakaoLogin")
@@ -123,7 +123,7 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 		//기존회원일 경우 로그인
 		else {
 			model.addAttribute("msg","로그인이 완료되었습니다.");
-			return "test";
+			return "main";
 		}
 //		return "user/afterLogin";//ooooo
 	}
@@ -184,7 +184,7 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 		//기존회원일 경우 로그인
 		else {
 			model.addAttribute("msg","로그인이 완료되었습니다.");
-			return "test";
+			return "main";
 		}
 	}
 
@@ -200,7 +200,7 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 		session.invalidate();
 		//카카오 로그아웃
 
-		return "redirect:/test.do";
+		return "redirect:";
 	}
 
 	// 로그인 처리
@@ -253,7 +253,7 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 			e.printStackTrace();
 		}
 		
-//		return "test";
+//		return "main";
 //		return "user/loginPost";
         
 //        return "redirect:test.do";
@@ -287,7 +287,7 @@ System.err.println("userInfo:"+userInfo);//@@@v2@@@
 //				System.err.println("loginCookie:"+loginCookie);
 //				Cookie cookie=new Cookie("loginCookie",null);
 //				
-//				cookie.setPath("/test.do");
+//				cookie.setPath("");
 //				cookie.setMaxAge(0);
 //				response.addCookie(cookie);
 //				

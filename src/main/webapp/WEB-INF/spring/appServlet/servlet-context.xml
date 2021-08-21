@@ -20,7 +20,7 @@
 	<resources mapping="/resources/**" location="/resources/" />
 	 <resources mapping="/img/*" location="/img/" />
 	 
-	<!--  <resources mapping="/user/**" location="/test.do" /> -->
+	<!--  <resources mapping="/user/**" location="/main.do" /> -->
 <!-- 	 <resources mapping="/img/*" location="/Users/won-yungyeong/Downloads" /> -->
 <!--     <resources mapping="/img/**" location="/Users/won-yungyeong/Downloads" />
  -->    

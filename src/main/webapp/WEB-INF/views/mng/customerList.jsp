@@ -173,7 +173,8 @@ $(document).ready(function(){
     		alert(checkArr);
     			
     		$.ajax({
-    			url : "/mng/deleteCustomer.do",
+    			url : '<c:url value="/mng/deleteCustomer.do"/>',
+/*     			url : "/mng/deleteCustomer.do", */
     			type : "post",
     			data : { chbox : checkArr },
     			success : function(result){

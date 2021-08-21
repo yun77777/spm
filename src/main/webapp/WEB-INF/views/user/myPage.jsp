@@ -36,7 +36,7 @@
 				<h1> 회원 정보 관리 </h1>
 				
 							
-					<button class="btn selectDelete_btn btn-info btn-sm float-right" onclick="fn_update()" type="submit">수정</button>
+					<button class="btn selectDelete_btn btn-info btn-sm float-right" onclick="fn_update()" type="button">수정</button>
 					<button class="btn selectDelete_btn btn-danger btn-sm float-right" onclick="" type="submit">탈퇴</button>
 		<br><br>
 			<table class="table">

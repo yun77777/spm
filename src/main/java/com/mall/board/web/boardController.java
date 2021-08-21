@@ -52,13 +52,13 @@ public class boardController {
     private void setNaverLoginBO(NaverLoginBO naverLoginBO) {
         this.naverLoginBO = naverLoginBO;
     }
-//	@RequestMapping(value = "/test.do")
+//	@RequestMapping(value = "/main.do")
 //	public String test(@RequestParam(defaultValue="1") int currentPageNo, @RequestParam(defaultValue="20") int recordCountPerPage,
 //			@RequestParam Map<String, Object> paramMap, HttpSession session, HttpServletRequest request, Model model) throws Exception {
 //		
-//		return "test";
+//		return "main";
 //	}
-	@RequestMapping(value = "/test.do")
+	@RequestMapping(value = "/main.do")
 	public String test(@RequestParam(defaultValue="1") int currentPageNo, @RequestParam(defaultValue="20") int recordCountPerPage ,Map<String, Object> paramMap, @ModelAttribute("loginDTO") LoginDTO loginDTO, HttpSession httpSession, Model model) {
 		System.err.println("test@@@:"+httpSession.getAttribute("login"));
 		System.err.println("member@@@:"+httpSession.getAttribute("member"));
@@ -110,14 +110,14 @@ public class boardController {
 			model.addAttribute("list4",list4);
 			
 			model.addAttribute("pg",pg);
-//			httpSession.setAttribute("destination", "/test.do");
+//			httpSession.setAttribute("destination", "/main.do");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		
-		return "test";
+		return "main";
 	}
 	
 	

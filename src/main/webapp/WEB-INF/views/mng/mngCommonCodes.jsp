@@ -235,7 +235,8 @@ $(document).ready(function(){
 		});
 		
 		$.ajax({
-			url : "/mng/insertCommonCodes.do",
+			url : '<c:url value="/mng/insertCommonCodes.do"/>',
+/* 			url : "/mng/insertCommonCodes.do", */
 			type : "post",
 			data : { cidArr : cidArr ,lCategoryArr : lCategoryArr ,sCategoryArr : sCategoryArr ,
 				nameArr : nameArr ,descrptArr : descrptArr ,},
@@ -286,7 +287,8 @@ function fn_insert() {
 	var formData = new FormData($("#boardForm")[0]);
 
 	$.ajax({
-		url : "/mng/insertCommonCodes.do",
+		url : '<c:url value="/mng/insertCommonCodes.do"/>',
+/* 		url : "/mng/insertCommonCodes.do", */
 		type : "post",
 		data : formData,
 		success : function(result) {

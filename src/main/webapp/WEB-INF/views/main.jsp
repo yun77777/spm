@@ -441,7 +441,8 @@ function fn_detail_pop(B_NO,B_TYPE){
 						};
 				
 			$.ajax({
-					url : "/directOrderProcess.do",
+				url : '<c:url value="/directOrderProcess.do"/>',
+/* 					url : "/directOrderProcess.do", */
 					type : "post",
 					data : data,
 					success : function(result){
@@ -481,7 +482,7 @@ function fn_list(no) {
 	$('#currentPageNo').val(no);
 	var currentPageNo=no;
 	$('#boardForm').attr({
-		action : '<c:url value="/test.do"/>',
+		action : '<c:url value="/main.do"/>',
 		target : '_self'
 	}).submit();
 	
@@ -509,7 +510,8 @@ $(".addCart_btn").click(function(){
 				};
 		
 		$.ajax({
-			url : "/view/addCart.do",
+			url : '<c:url value="/view/addCart.do"/>',
+/* 			url : "/view/addCart.do", */
 			type : "post",
 			data : data,
 			success : function(result){

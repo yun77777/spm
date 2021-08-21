@@ -128,7 +128,7 @@
 						</tr>
 						<tr>
 							<td>
-								최종 가격
+								합계
 							</td>
 							<td>
 								<fmt:formatNumber pattern="###,###,###" value="${cartList.gdsPrice * cartList.cartStock}" /> 원
@@ -212,7 +212,8 @@ function fn_delete() {
 		
 			
 		$.ajax({
-			url : "/deleteCart.do",
+			url : '<c:url value="/deleteCart.do"/>',
+/* 			url : "/deleteCart.do", */
 			type : "post",
 			data : { chbox : checkArr , userId : userId },
 			success : function(result){
@@ -304,7 +305,8 @@ $(".delete_btn").click(function(){
 		checkArr.push($(this).attr("data-cartNum"));
 													
 		$.ajax({
-			url : "/deleteCart.do",
+			url : '<c:url value="/deleteCart.do"/>',
+/* 			url : "/deleteCart.do", */
 			type : "post",
 			data : { chbox : checkArr , userId : userId},
 			success : function(result){
@@ -319,7 +321,7 @@ $(".delete_btn").click(function(){
 });
 
 $(".cancel_btn").click(function(){
-	window.location='<c:url value="/test.do"/>';
+	window.location='<c:url value="/main.do"/>';
 });		
 });
 //주문
@@ -346,7 +348,8 @@ function fn_order(){
 
 	    $.ajax({
 			//선택 후 orderProcess(주문) 페이지로 이동
-			url : "/orderProcess.do",
+			url : '<c:url value="/orderProcess.do"/>',
+/* 			url : "/orderProcess.do", */
 			type : "post",
 			data : { chbox : checkArr , userId : userId , cartStockArr : cartStockArr,},
 			success : function(result){

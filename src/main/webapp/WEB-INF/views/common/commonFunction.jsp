@@ -179,7 +179,8 @@
     						};
     				
     			$.ajax({
-    					url : "/directOrderProcess.do",
+    				url : '<c:url value="/directOrderProcess.do"/>',
+/*     					url : "/directOrderProcess.do", */
     					type : "post",
     					data : data,
     					success : function(result){

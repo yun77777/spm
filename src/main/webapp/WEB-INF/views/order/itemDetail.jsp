@@ -412,7 +412,8 @@ $(".modal_modify_btn").click(function(){
 				};  // ReplyVO 형태로 데이터 생성
 		
 		$.ajax({
-			url : "/shop/view/modifyReply",
+			url : '<c:url value="/shop/view/modifyReply.do"/>',
+/* 			url : "/shop/view/modifyReply", */
 			type : "post",
 			data : data,
 			success : function(result){
@@ -448,7 +449,8 @@ $(".modal_cancel").click(function(){
 				};
 		
 		$.ajax({
-			url : "/view/addCart.do",
+			url : '<c:url value="/view/addCart.do"/>',
+/* 			url : "/view/addCart.do", */
 			type : "post",
 			data : data,
 			success : function(result){

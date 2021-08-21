@@ -102,7 +102,8 @@ $(document).ready(function(){
     		alert(checkArr);
     			
     		$.ajax({
-    			url : "/mng/deleteBoards.do",
+				url : '<c:url value="/mng/deleteBoards.do"/>',
+/*     			url : "/mng/deleteBoards.do", */
     			type : "post",
     			data : { chbox : checkArr },
     			success : function(result){

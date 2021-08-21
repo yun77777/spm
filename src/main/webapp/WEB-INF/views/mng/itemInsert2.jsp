@@ -144,7 +144,8 @@
 							resize_enaleb : false,
 							enterMode : CKEDITOR.ENTER_BR,
 							shiftEnterMode : CKEDITOR.ENTER_P,
-							filebrowserUploadUrl : "/admin/goods/ckUpload"
+							filebrowserUploadUrl : '<c:url value="/admin/goods/ckUpload.do"/>'
+/* 							filebrowserUploadUrl : "/admin/goods/ckUpload" */
 					};
 					
 					CKEDITOR.replace("gdsDes", ckeditor_config);

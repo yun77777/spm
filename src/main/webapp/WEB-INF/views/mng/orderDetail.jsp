@@ -98,7 +98,8 @@ function fn_deliver(orderId,delivery){
 			};
 	
 	$.ajax({
-		url : "/mng/itemDelivery.do",
+		url : '<c:url value="/mng/itemDelivery.do"/>',
+/* 		url : "/mng/itemDelivery.do", */
 		type : "post",
 		data : data,
 		success : function(result){

@@ -165,7 +165,8 @@ $(document).ready(function(){
     		alert(checkArr);
     			
     		$.ajax({
-    			url : "/mng/deleteItems.do",
+    			url : '<c:url value="/mng/deleteItems.do"/>',
+/*     			url : "/mng/deleteItems.do", */
     			type : "post",
     			data : { chbox : checkArr },
     			success : function(result){

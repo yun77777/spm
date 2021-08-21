@@ -134,7 +134,8 @@ function fn_cancel(orderId){
 				alert('취소할 상품을 선택해주세요.');
 		} else{
 			$.ajax({
-    			url : "/mng/cancelItems.do",
+    			url : '<c:url value="/mng/cancelItems.do"/>',
+/*     			url : "/mng/cancelItems.do", */
     			type : "post",
     			data : { chbox : checkArr },
     			success : function(result){
@@ -175,7 +176,8 @@ function fn_deliver(orderId){
    				alert('발송처리할 상품을 선택해주세요.');
 		} else{
     		$.ajax({
-    			url : "/mng/deliverItems.do",
+    			url : '<c:url value="/mng/deliverItems.do"/>',
+/*     			url : "/mng/deliverItems.do", */
     			type : "post",
     			data : { chbox : checkArr },
     			success : function(result){

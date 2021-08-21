@@ -12,7 +12,7 @@
  <!-- Navigation-->
  <!-- Image and text -->
 <!-- <nav class="navbar navbar-dark bg-conflowerblue">
-  <a class="navbar-brand" href="/test.do">
+  <a class="navbar-brand" href="/main.do">
         <img src="/se2/img/dog.png" style="width:10%;height:auto"><br>댕댕몰
         </a>
 </nav>
@@ -20,8 +20,8 @@
  
 <nav class="navbar navbar-expand-lg navbar-dark bg-conflowerblue">
 <!--         <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> -->
-    <a class="navbar-brand ml-5" href='<c:url value="/test.do"/>'>
-<!--     <a class="navbar-brand ml-5" href="/test.do"> -->
+    <a class="navbar-brand ml-3" href='<c:url value="/main.do"/>'>
+<!--     <a class="navbar-brand ml-3" href="/main.do"> -->
         <img src="<c:url value='/se2/img/dog.png'/>" style="width:10%;height:auto;margin:0 10px">
 <!--         <img src="/se2/img/dog.png" style="width:10%;height:auto;margin:0 10px"> -->
         <br><i class="fas fa-gem me-3"></i>댕댕몰
@@ -48,23 +48,23 @@
             
 	<!--                         <li class="nav-item"><a class="nav-link" href="/about.do">About</a></li>
 	 -->                        
-				<li class="nav-item ml-5"><a class="nav-link" href="#" onclick="fn_itemList('top')">상의</a></li>
-				<li class="nav-item ml-5"><a class="nav-link" href="#" onclick="fn_itemList('bottom')">하의</a></li>
-				<li class="nav-item ml-5"><a class="nav-link" href="#" onclick="fn_itemList('shoes')">신발</a></li>
-				<li class="nav-item ml-5"><a class="nav-link" href="#" onclick="fn_itemList('pet')">반려동물용품</a></li>
+				<li class="nav-item ml-3"><a class="nav-link" href="#" onclick="fn_itemList('top')">상의</a></li>
+				<li class="nav-item ml-3"><a class="nav-link" href="#" onclick="fn_itemList('bottom')">하의</a></li>
+				<li class="nav-item ml-3"><a class="nav-link" href="#" onclick="fn_itemList('shoes')">신발</a></li>
+				<li class="nav-item ml-3"><a class="nav-link" href="#" onclick="fn_itemList('pet')">반려동물용품</a></li>
 				
-				<li class="nav-item ml-5"><a class="nav-link" href='<c:url value="boardList.do"/>'>게시판</a></li>
-<!-- 				<li class="nav-item ml-5"><a class="nav-link" href="/boardList.do">게시판</a></li> -->
-                <li class="nav-item ml-5"><a class="nav-link" href="#" onclick="fn_chk_login('${member.ID}','cart')">장바구니</a></li>
-<%--                 <li class="nav-item ml-5"><a class="nav-link" href="#" onclick="fn_chk_login('${member.ID}')"><img src="<c:url value='/resources/img/cart.png'/>" alt="..." style="width:35px; height:auto;"></a></li> --%>
-                <li class="nav-item ml-5"><a class="nav-link" onclick="fn_chk_login('${member.ID}','order')">주문 내역</a></li>
+				<li class="nav-item ml-3"><a class="nav-link" href='<c:url value="boardList.do"/>'>게시판</a></li>
+<!-- 				<li class="nav-item ml-3"><a class="nav-link" href="/boardList.do">게시판</a></li> -->
+                <li class="nav-item ml-3"><a class="nav-link" href="#" onclick="fn_chk_login('${member.ID}','cart')">장바구니</a></li>
+<%--                 <li class="nav-item ml-3"><a class="nav-link" href="#" onclick="fn_chk_login('${member.ID}')"><img src="<c:url value='/resources/img/cart.png'/>" alt="..." style="width:35px; height:auto;"></a></li> --%>
+                <li class="nav-item ml-3"><a class="nav-link" onclick="fn_chk_login('${member.ID}','order')">주문 내역</a></li>
 <!--                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
  -->                        
 <!--  <li class="nav-item"><a class="nav-link" href="/chatting.do">Chat</a></li>
  -->                
  
  <c:if test="${not empty member}">
-            	<li class="nav-item ml-5"><p class="nav-link">환영합니다 <b>${member.ID}</b> 고객님!</p></li>
+            	<li class="nav-item ml-3"><p class="nav-link">환영합니다 <b>${member.ID}</b> 고객님!</p></li>
 <%--                     	<li class="nav-item"><p class="nav-link">Welcome <b>${login.ID}</b>!</p></li> --%>
 </c:if>
             <c:if test="${not empty member}">
@@ -102,7 +102,7 @@
                    </div>
                </li>
 </c:if>
-				<li class="nav-item ml-5">
+				<li class="nav-item ml-3">
 				 <c:if test="${empty member}">
 		        	<a href="#myModal" class="nav-link" data-toggle="modal">로그인</a>
 		        </c:if>

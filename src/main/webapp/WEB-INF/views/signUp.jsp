@@ -149,7 +149,7 @@ $(document).ready(function(){
 
 });
 function fn_list() {
-	window.location='<c:url value="/test.do"/>';
+	window.location='<c:url value="/main.do"/>';
 };
 
 function fn_sign_up() {

@@ -56,7 +56,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	            logger.info("remember me...");
 	            // 로그인 유지 선택 시 쿠키 생성
 	            Cookie loginCookie = new Cookie("loginCookie", httpSession.getId());
-	            loginCookie.setPath("/test.do");
+	            loginCookie.setPath("/main.do");
 //	            loginCookie.setPath("/");
 	            loginCookie.setMaxAge(60*60*24*7);
 	            // 전송
@@ -64,12 +64,12 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	        }
 	        
 	        if(n_userInfo!=null & member==null) {
-				//response.sendRedirect("/test.do");
+				//response.sendRedirect("/main.do");
 	        	return;
 	        }else {
 	        	Object destination = httpSession.getAttribute("destination");
 	        	String cPath=request.getContextPath();
-				response.sendRedirect(destination != null ? (String) destination : cPath+"/test.do");
+				response.sendRedirect(destination != null ? (String) destination : cPath+"/main.do");
 				return ;
 	        }
 	        

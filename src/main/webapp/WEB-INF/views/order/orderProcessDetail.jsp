@@ -317,7 +317,8 @@ function fn_order_check() {
 		
 		
 		$.ajax({
-			url : "/orderChk.do",
+			url : '<c:url value="/orderChk.do"/>',
+/* 			url : "/orderChk.do", */
 			type : "post",
 			//processData : false,
 			data : { chbox : checkArr , userId : userId , cartStockArr : cartStockArr},
