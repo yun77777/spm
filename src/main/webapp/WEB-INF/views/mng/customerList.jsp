@@ -51,17 +51,12 @@
 			    
 				<div class="row">
 				
-					<div class="col-lg-8 mb-4">
 						<div id="success"></div>
 						<!-- //search-->
-					<div class="row">
-						<div class="col-12">
-							<button type="button" onclick="" id="delete_btn" class="btn btn btn-danger btn-sm float-right">삭제</button>
-						</div>
-					</div>
-				</div>
 			</div>
+			<button type="button" onclick="" id="delete_btn" class="btn btn btn-danger btn-sm float-right">삭제</button>
           		<span>총 <em>${pg.totalRecordCount}</em>건 </span>
+          		<br><br>
                 
 				<table class="table table-sm text-center">
 					<colgroup>

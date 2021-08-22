@@ -88,7 +88,7 @@
           <p><i class="fas fa-home me-3"></i> 서울시</p>
           <p>
             <i class="fas fa-envelope me-3"></i>
-            wyk0935@gmail.com
+            <a href="mailto:wyk0935@gmail.com">wyk0935@gmail.com</a>
           </p>
           <!-- <p><i class="fas fa-phone me-3"></i> + 010 9253 0935</p> -->
         </div>

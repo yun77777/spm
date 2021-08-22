@@ -35,7 +35,8 @@
 		<div class="container">
 
 				<!-- Page Heading/Breadcrumbs-->
-				<h2>공통코드 관리</h2>
+				<h2>카테고리 관리</h2>
+<!-- 				<h2>공통코드 관리</h2> -->
 
 <!-- @@@ -->
 		<form id="boardForm" method="post" enctype="multipart/form-data">
@@ -72,7 +73,8 @@
 			    			</span>
 		    			</div>
 						</th>
-							<th>공통코드번호</th>
+							<th>카테고리 번호</th>
+<!-- 							<th>공통코드번호</th> -->
 							<th>대분류</th>
 							<th>소분류</th>
 							<th>이름</th>

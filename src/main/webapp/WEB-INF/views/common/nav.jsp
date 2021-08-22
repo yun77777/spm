@@ -95,7 +95,8 @@
                    <div class="dropdown-menu dropdown:hover dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
                        <a class="dropdown-item" href='<c:url value="/mng/itemList.do"/>'>상품 관리</a>
                        <a class="dropdown-item" href='<c:url value="/mng/boardList.do"/>'>게시판 관리</a>
-                       <a class="dropdown-item" href='<c:url value="/mng/mngCommonCodes.do"/>'>공통코드 관리</a>
+                       <a class="dropdown-item" href='<c:url value="/mng/mngCommonCodes.do"/>'>카테고리 관리</a>
+<%--                        <a class="dropdown-item" href='<c:url value="/mng/mngCommonCodes.do"/>'>공통코드 관리</a> --%>
                        <a class="dropdown-item" href='<c:url value="/mng/orderList.do"/>'>주문 내역 관리</a>
                        <!-- <a class="dropdown-item" href="portfolio-3-col.html">상품평 관리</a> -->
                        <a class="dropdown-item" href='<c:url value="/mng/customerList.do"/>'>고객 관리</a>
